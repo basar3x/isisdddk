@@ -4,20 +4,20 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="theme-color" content="#0a0a0a">
-  <meta name="description" content="Is Dead — Reggaetón alternativo, indie y hip-hop experimental. Música para el nuevo milenio desde la escena independiente.">
-  <meta property="og:title" content="IS DEAD | Nuevo Alternativo">
-  <meta property="og:description" content="Is Dead — Reggaetón alternativo, indie y hip-hop experimental. Un universo visual digital.">
-  <meta property="og:image" content="https://i.scdn.co/image/ab6761610000e5eb6e5f7c3e0e0f0e0e0e0e0e0e">
+  <meta name="description" content="Is Dead — Trap, indie y hip-hop experimental. Música para el nuevo milenio desde la escena independiente.">
+  <meta property="og:title" content="IS DEAD | World">
+  <meta property="og:description" content="Is Dead — Trap, indie y hip-hop experimental. Un universo visual digital.">
+  <meta property="og:image" content="https://i.pinimg.com/1200x/d0/a0/43/d0a043a16ad41ffaa91694a749b60b65.jpg">
   <meta property="og:type" content="website">
-  <title>IS DEAD | Nuevo Alternativo</title>
+  <title>IS DEAD | World</title>
 
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
   <link rel="preconnect" href="https://i.ytimg.com" crossorigin>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="image" href="https://i.scdn.co/image/ab6761610000e5eb6e5f7c3e0e0f0e0e0e0e0e0e" fetchpriority="high">
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="https://i.pinimg.com/1200x/d0/a0/43/d0a043a16ad41ffaa91694a749b60b65.jpg" fetchpriority="high">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     @font-face{font-family:'Space Grotesk';src:url("https://cdn.jsdelivr.net/npm/@fontsource/space-grotesk@5.0.18/files/space-grotesk-latin-400-normal.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
     @font-face{font-family:'Space Grotesk';src:url("https://cdn.jsdelivr.net/npm/@fontsource/space-grotesk@5.0.18/files/space-grotesk-latin-700-normal.woff2") format("woff2");font-weight:700;font-style:normal;font-display:swap}
@@ -34,6 +34,7 @@
       --section:clamp(4.5rem,9vw,8rem);
       --ease:cubic-bezier(.16,1,.3,1);--radius-sm:10px;--radius:14px;--radius-lg:18px;
       --font-display:'Syne',sans-serif;
+      --font-hero:'Archivo Black','Syne',sans-serif;
       --font-body:'Space Grotesk',sans-serif;
       --glass:rgba(255,255,255,.02);
       --glass-line:rgba(255,255,255,.07);
@@ -88,13 +89,34 @@
     .hero-media:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 48%,rgba(10,10,10,.05),rgba(10,10,10,.82) 72%),linear-gradient(0deg,#0a0a0a 0%,transparent 42%,rgba(10,10,10,.35) 100%);z-index:1}
     .hero-media img{width:100%;height:100%;object-fit:cover;object-position:56% 25%;filter:grayscale(.3) contrast(1.2) brightness(.5);transform:scale(1.035);will-change:transform;position:relative;z-index:0}
     .hero-grid{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.25rem;width:min(100%,1380px);margin:auto;position:relative;z-index:2}
-    .hero-title{position:relative;margin:0;font-size:clamp(4.5rem,13.6vw,12rem);line-height:.76;letter-spacing:-.075em;text-transform:uppercase;white-space:nowrap;font-family:var(--font-display)}
-    .hero-title::before{content:"";position:absolute;inset:-40% -12%;background:radial-gradient(ellipse at center,rgba(255,77,141,.35),transparent 62%);filter:blur(70px);z-index:-1;pointer-events:none;animation:heroGlow 5.5s ease-in-out infinite alternate}
+    .hero-title{position:relative;margin:0;font-family:var(--font-hero);font-weight:900;font-size:clamp(5rem,17vw,15rem);line-height:.74;letter-spacing:-.085em;text-transform:uppercase;white-space:nowrap;color:#fff;text-shadow:0 0 1px rgba(255,255,255,.4)}
+    .hero-title::before{content:"";position:absolute;inset:-40% -12%;background:radial-gradient(ellipse at center,rgba(255,77,141,.38),transparent 62%);filter:blur(80px);z-index:-1;pointer-events:none;animation:heroGlow 5.5s ease-in-out infinite alternate}
     @keyframes heroGlow{from{opacity:.5;transform:scale(1)}to{opacity:.95;transform:scale(1.09)}}
-    .hero-title .line{display:inline-block}
-    .hero-title .dead{margin-left:.08em;color:var(--neon-cyan);text-shadow:0 0 42px rgba(0,229,255,.55)}
-    .hero-slogan{margin:0;color:#fff;font-family:var(--font-display);font-size:clamp(1.25rem,2vw,1.7rem);font-style:italic;font-weight:600;letter-spacing:.16em;text-transform:uppercase}
-    .hero-actions{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-top:1rem;width:min(100%,520px)}
+    .hero-title .line{display:inline-block;position:relative}
+    .hero-title .line:first-child{
+      background:linear-gradient(180deg,#ffffff 0%,#8a8a8a 100%);
+      -webkit-background-clip:text;background-clip:text;color:transparent;
+      filter:drop-shadow(0 0 20px rgba(255,255,255,.15));
+    }
+    .hero-title .dead{
+      margin-left:.02em;
+      background:linear-gradient(135deg,var(--neon-pink) 0%,var(--neon-cyan) 100%);
+      -webkit-background-clip:text;background-clip:text;color:transparent;
+      filter:drop-shadow(0 0 38px rgba(255,77,141,.55)) drop-shadow(0 0 70px rgba(0,229,255,.35));
+      position:relative;
+    }
+    .hero-title .dead::after{
+      content:"DEAD";
+      position:absolute;inset:0;
+      background:linear-gradient(135deg,var(--neon-cyan) 0%,var(--neon-pink) 100%);
+      -webkit-background-clip:text;background-clip:text;color:transparent;
+      mix-blend-mode:screen;opacity:0;pointer-events:none;
+      animation:shimmer 6s ease-in-out infinite;
+    }
+    @keyframes shimmer{0%,90%,100%{opacity:0;transform:translateX(0)}45%{opacity:.7;transform:translateX(-2px)}55%{opacity:.7;transform:translateX(2px)}}
+    .hero-accent{width:clamp(60px,10vw,120px);height:2px;background:linear-gradient(90deg,transparent,var(--neon-pink),var(--neon-cyan),transparent);border-radius:2px;margin:.25rem 0}
+    .hero-slogan{margin:0;color:#fff;font-family:var(--font-hero);font-size:clamp(1.1rem,2.4vw,2rem);font-weight:900;letter-spacing:.35em;text-transform:uppercase;padding-left:.35em}
+    .hero-actions{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-top:1.5rem;width:min(100%,520px)}
     .hero-actions .button{width:100%}
     .hero-rail{position:absolute;right:var(--pad);top:50%;transform:translateY(-50%) rotate(90deg);transform-origin:100% 50%;font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;color:#7a7570}
 
@@ -105,7 +127,7 @@
     .about-portrait:hover img{transform:scale(1.025)}
     .about-portrait:after{content:"";position:absolute;inset:0;border:1px solid var(--line);border-radius:inherit;box-shadow:inset 0 -120px 90px rgba(0,0,0,.38);pointer-events:none}
     .about-copy{padding-top:clamp(0rem,4vw,4rem)}.about-copy p{max-width:64ch;color:#b0aaa4;font-size:clamp(1.05rem,1.6vw,1.3rem)}.about-copy strong{color:#fff;font-weight:780}
-    .artist-slogan{margin:clamp(1.5rem,3vw,2.5rem) 0;font-family:var(--font-display);font-size:clamp(3.2rem,7vw,7.3rem)!important;font-style:italic;font-weight:700;line-height:.78;letter-spacing:-.05em;text-transform:uppercase;color:var(--neon-cyan)!important}
+    .artist-slogan{margin:clamp(1.5rem,3vw,2.5rem) 0;font-family:var(--font-hero);font-size:clamp(3.2rem,7vw,7.3rem)!important;font-weight:900;line-height:.8;letter-spacing:-.06em;text-transform:uppercase;color:var(--neon-cyan)!important}
 
     /* ---------- CATÁLOGO (GLASS) ---------- */
     .catalog{background:linear-gradient(180deg,rgba(17,17,18,.82),rgba(10,10,10,.98));position:relative;overflow:hidden}
@@ -132,32 +154,6 @@
     .show-date{font-family:var(--font-display);font-size:clamp(2rem,4vw,3.4rem);font-style:italic;font-weight:700;color:var(--neon-pink);letter-spacing:-.04em;line-height:.8}
     .show h3{margin:0;font-size:1.05rem;text-transform:uppercase}.show p{margin:.3rem 0 0;color:var(--muted);font-size:.85rem}
     .show .status{color:#6e6964;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase}
-
-    /* ---------- VISUALES ---------- */
-    .visuals{overflow:hidden}
-    .video-head{display:flex;align-items:end;justify-content:space-between;gap:2rem;margin-bottom:clamp(2rem,5vw,4rem)}
-    .video-controls{display:flex;gap:.6rem}
-    .video-rail{display:flex;gap:1rem;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior-inline:contain;touch-action:pan-x;padding-bottom:.5rem}
-    .video-rail::-webkit-scrollbar{display:none}
-    .video-card{position:relative;flex:0 0 min(70vw,820px);aspect-ratio:16/10;overflow:hidden;border-radius:var(--radius-lg);scroll-snap-align:start;transform:translateZ(0)}
-    .video-card img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.22) brightness(.68);transition:transform .9s var(--ease),filter .5s ease;will-change:transform}
-    .video-card:hover img{transform:scale(1.045);filter:grayscale(.25) contrast(1.1) brightness(.75)}
-    .video-card:after{content:"";position:absolute;inset:0;border:1px solid var(--line);border-radius:inherit;pointer-events:none}
-    .video-label{position:absolute;left:1.25rem;right:1.25rem;bottom:1.2rem;display:flex;justify-content:space-between;align-items:end;z-index:2;font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em}
-    .video-label svg{width:32px;height:32px;fill:#fff}
-    .video-more{display:flex;justify-content:center;margin-top:clamp(1.5rem,4vw,2.5rem)}
-
-    /* ---------- GALERÍA ---------- */
-    .gallery-grid{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-flow:dense;gap:clamp(.45rem,1vw,.85rem);transform:translateZ(0)}
-    .gallery-item{min-height:250px;overflow:hidden;border-radius:var(--radius);transition:transform .55s var(--ease),opacity .55s var(--ease);transform:translateZ(0)}
-    .gallery-item:nth-child(1){grid-column:span 7;grid-row:span 2}
-    .gallery-item:nth-child(2){grid-column:span 5}
-    .gallery-item:nth-child(3){grid-column:span 5}
-    .gallery-item:nth-child(4),.gallery-item:nth-child(5),.gallery-item:nth-child(6){grid-column:span 4}
-    .gallery-item img{width:100%;height:100%;min-height:250px;object-fit:cover;filter:grayscale(1) contrast(1.15);transition:filter .55s ease;will-change:transform}
-    .gallery-grid:hover .gallery-item:not(:hover){opacity:.4;transform:translateZ(0) scale(.98)}
-    .gallery-item:hover{transform:translateZ(0) scale(1.05);z-index:2}
-    .gallery-item:hover img{filter:grayscale(.1) contrast(1.04)}
 
     /* ---------- MERCH ---------- */
     .merch{background:#0d0d0e}
@@ -213,27 +209,22 @@
     @media(max-width:900px){
       .nav{grid-template-columns:auto 1fr}.nav-links,.nav-socials{display:none}.nav-actions{grid-column:2;justify-self:end}.menu-toggle{display:grid}
       .section-head,.about-grid,.shows-layout,.booking-grid{grid-template-columns:1fr}
-      .hero-title{font-size:clamp(4rem,18vw,8rem)}.hero-rail{display:none}.section-head{align-items:start}
+      .hero-title{font-size:clamp(4.5rem,20vw,9rem)}.hero-rail{display:none}.section-head{align-items:start}
       .about-copy{padding-top:0}.about-portrait{width:min(100%,540px)}
       .shows-layout .section-title{position:static}
-      .video-card{flex-basis:min(82vw,620px)}
       .release-grid{grid-template-columns:1fr 1fr}
       .merch-grid{grid-template-columns:1fr 1fr}
       .mobile-menu{display:grid}
-      .gallery-item:nth-child(n){grid-column:span 6;grid-row:auto}
-      .gallery-item:nth-child(1){grid-column:span 12}
       .footer-row{align-items:start;flex-direction:column}
     }
     @media(max-width:620px){
       .nav{padding-block:.72rem;gap:.7rem}.nav .button{display:none}
       .hero{padding-inline:1rem}.hero-media img{object-position:58% 30%}
-      .hero-title{font-size:clamp(3.85rem,20vw,6.3rem);line-height:.78}
-      .hero-slogan{letter-spacing:.2em}
-      .hero-actions{width:100%;gap:.5rem}
+      .hero-title{font-size:clamp(4.2rem,22vw,7rem);letter-spacing:-.07em}
+      .hero-slogan{font-size:clamp(.95rem,3.6vw,1.3rem);letter-spacing:.3em}
+      .hero-actions{width:100%;gap:.5rem;margin-top:1.2rem}
       .hero-actions .button{font-size:.66rem;padding:.7rem .6rem;letter-spacing:.08em;min-height:46px}
       .section-title{font-size:clamp(2.8rem,14vw,4.4rem)}
-      .video-head{align-items:start}
-      .video-card{flex-basis:88vw}
       .release-grid{grid-template-columns:1fr}
       .merch-grid{grid-template-columns:1fr 1fr;gap:.6rem}
       .product{min-height:auto;padding:.65rem;border-radius:12px}
@@ -244,8 +235,6 @@
       .size{min-width:26px;height:26px;font-size:.6rem;border-radius:6px}
       .product .button{font-size:.58rem;min-height:38px;padding:.5rem .4rem;letter-spacing:.06em}
       .show{grid-template-columns:80px 1fr}.show .button,.show .status{grid-column:1/-1;width:100%}
-      .gallery-item:nth-child(n),.gallery-item:nth-child(1){grid-column:span 6;grid-row:auto;min-height:190px}
-      .gallery-item img{min-height:190px}
       .form{grid-template-columns:1fr}.field{grid-column:1/-1}
       .cart{top:.25rem;right:.25rem;bottom:.25rem;width:calc(100vw - .5rem);padding:1rem}
       .mobile-menu a{font-size:clamp(1.65rem,8.5vw,2.8rem)}
@@ -255,7 +244,7 @@
       *,*:before,*:after{animation-duration:.001ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}
       .grain,#webgl{display:none!important}
       .button{will-change:auto}
-      .about-portrait img,.gallery-item img,.video-card img{will-change:auto}
+      .about-portrait img{will-change:auto}
       .word,.word-inner{display:inline}.word{overflow:visible}
     }
   </style>
@@ -275,13 +264,14 @@
   <header class="nav">
     <a class="brand" href="#top" aria-label="IS DEAD, inicio">IS DEAD</a>
     <nav class="nav-links" aria-label="Navegación principal">
-      <a href="#artist">Artista</a><a href="#music">Discografía</a><a href="#shows">Shows</a><a href="#visuals">Visuales</a><a href="#gallery">Galería</a><a href="#merch">Merch</a><a href="#booking">Booking</a>
+      <a href="#artist">Artista</a><a href="#music">Discografía</a><a href="#merch">Merch</a><a href="#shows">Shows</a><a href="#booking">Booking</a>
     </nav>
     <div class="nav-actions">
       <div class="nav-socials" aria-label="Redes sociales">
-        <a class="social-icon" href="https://open.spotify.com/artist/0EKvKtaSHhGT2Sppi8qZLS" target="_blank" rel="noopener" aria-label="Spotify"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm4.6 14.4a.7.7 0 0 1-.96.23c-2.63-1.6-5.94-1.97-9.84-1.08a.7.7 0 1 1-.31-1.36c4.26-.97 7.94-.55 10.88 1.24.33.2.43.64.23.97Zm1.37-3.03a.88.88 0 0 1-1.2.3c-3.02-1.86-7.63-2.39-11.2-1.31a.88.88 0 1 1-.51-1.68c4.09-1.24 9.17-.64 12.62 1.49.42.25.55.79.29 1.2Zm.12-3.15C14.47 8.07 8.5 7.87 5.04 8.91a1.05 1.05 0 1 1-.61-2.01c3.98-1.2 10.58-.96 14.74 1.5a1.05 1.05 0 0 1-1.08 1.82Z"/></svg></a>
-        <a class="social-icon" href="https://www.qobuz.com/us-en/interpreter/is-dead/10516617" target="_blank" rel="noopener" aria-label="Qobuz"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 14h3v2H3v-2Zm0-4h3v2H3v-2Zm0-4h3v2H3V6Zm5 8h3v2H8v-2Zm0-4h3v2H8v-2Zm0-4h3v2H8V6Zm5 8h3v2h-3v-2Zm0-4h3v2h-3v-2Zm0-4h3v2h-3V6Zm5 8h3v2h-3v-2Zm0-4h3v2h-3v-2Z"/></svg></a>
-        <a class="social-icon" href="https://www.last.fm/music/Is+Dead" target="_blank" rel="noopener" aria-label="Last.fm"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 4a6 6 0 1 1 0 12 6 6 0 0 1 0-12Zm-1.5 3.5v5l4.5-2.5-4.5-2.5Z"/></svg></a>
+        <a class="social-icon" href="https://open.spotify.com/artist/0EKvKtaSHhGT2Sppi8qZLS" target="_blank" rel="noopener" aria-label="Spotify"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm4.6 14.4a.7.7 0 0 1-.96.23c-2.63-1.6-5.94-1.97-9.84-1.08a.7.7 0 1 1-.31-1.36c4.26-.97 7.94-.55 10.88 1.24.33.2.43.64.23.97Zm1.37-3.03a.88.88 0 0 1-1.2.3c-3.02-1.86-7.63-2.39-11.2-1.31a.88.88 0 1 1-.51-1.68c4.09-1.24 9.17-.64 12.62 1.49.42.25.55.79.29 1.2Z"/></svg></a>
+        <a class="social-icon" href="https://www.instagram.com/isisdddk/?hl=es-la" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm11 1.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z"/></svg></a>
+        <a class="social-icon" href="https://www.tiktok.com/@deadisisdead" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2h3c.2 1.8 1.2 3.2 3 4v3c-1.2 0-2.4-.4-3.4-1v7.1a6.1 6.1 0 1 1-5.3-6V12a3.2 3.2 0 1 0 2.7 3.1V2Z"/></svg></a>
+        <a class="social-icon" href="https://www.youtube.com/channel/UCLKPDnIvAVkcPdp_B0NTHVA" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2C.5 9.1.5 12 .5 12s0 2.9.5 4.8a3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1c.5-1.9.5-4.8.5-4.8s0-2.9-.5-4.8ZM9.7 15.2V8.8l6 3.2-6 3.2Z"/></svg></a>
       </div>
       <button class="icon-button" id="cartOpen" type="button" aria-label="Abrir carrito" style="position:relative">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12l-1 12H7L6 8Z"/><path d="M9 9V6a3 3 0 0 1 6 0v3"/></svg><span class="cart-count" id="cartCount">0</span>
@@ -292,37 +282,39 @@
     </div>
   </header>
 
-  <div class="mobile-menu" id="mobileMenu" aria-hidden="true"><nav aria-label="Navegación móvil"><a href="#artist">Artista</a><a href="#music">Discografía</a><a href="#shows">Shows</a><a href="#visuals">Visuales</a><a href="#gallery">Galería</a><a href="#merch">Merch</a><a href="#booking">Booking</a></nav></div>
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true"><nav aria-label="Navegación móvil"><a href="#artist">Artista</a><a href="#music">Discografía</a><a href="#merch">Merch</a><a href="#shows">Shows</a><a href="#booking">Booking</a></nav></div>
 
   <main id="top">
     <section class="hero">
-      <div class="hero-media" aria-hidden="true"><img src="https://i.scdn.co/image/ab6761610000e5eb6e5f7c3e0e0f0e0e0e0e0e0e" alt="" fetchpriority="high"></div>
+      <div class="hero-media" aria-hidden="true"><img src="https://i.pinimg.com/1200x/d0/a0/43/d0a043a16ad41ffaa91694a749b60b65.jpg" alt="" fetchpriority="high"></div>
       <div class="hero-grid">
         <h1 class="hero-title"><span class="line">IS</span><span class="line dead">DEAD</span></h1>
-        <p class="hero-slogan">Nuevo alternativo</p>
+        <div class="hero-accent" aria-hidden="true"></div>
+        <p class="hero-slogan">World</p>
         <div class="hero-actions">
           <a class="button primary magnetic" href="#artist">Explorar</a>
           <a class="button magnetic" href="https://open.spotify.com/artist/0EKvKtaSHhGT2Sppi8qZLS" target="_blank" rel="noopener">Escuchar ahora</a>
         </div>
       </div>
-      <div class="hero-rail">Reggaetón alternativo — Indie — Hip-Hop experimental</div>
+      <div class="hero-rail">Trap — Indie — Hip-Hop experimental</div>
     </section>
 
     <section class="section" id="artist">
       <div class="shell about-grid">
-        <figure class="about-portrait image-reveal"><img src="https://i.scdn.co/image/ab6761610000e5eb6e5f7c3e0e0f0e0e0e0e0e0e" alt="Is Dead" loading="lazy" decoding="async"></figure>
+        <figure class="about-portrait image-reveal"><img src="https://i.pinimg.com/1200x/d0/a0/43/d0a043a16ad41ffaa91694a749b60b65.jpg" alt="Is Dead" loading="lazy" decoding="async"></figure>
         <div class="about-copy">
           <h2 class="section-title split-title">Is Dead</h2>
-          <p class="artist-slogan split-copy">Nuevo alternativo</p>
-          <p><strong>Is Dead</strong> es un proyecto musical y sello independiente que fusiona el <strong>reggaetón alternativo</strong>, el <strong>indie</strong> y el <strong>hip-hop experimental</strong> en un universo sonoro propio. Su música habita un espacio entre lo melancólico y lo juguetón, con producciones atmosféricas que priorizan la textura sobre la claridad.</p>
+          <p class="artist-slogan split-copy">World</p>
+          <p><strong>Is Dead</strong> es un proyecto musical y sello independiente que fusiona el <strong>trap</strong>, el <strong>indie</strong> y el <strong>hip-hop experimental</strong> en un universo sonoro propio. Su música habita un espacio entre lo melancólico y lo juguetón, con producciones atmosféricas que priorizan la textura sobre la claridad.</p>
           <p>Con un catálogo de más de 60 lanzamientos en plataformas como Qobuz y Spotify, Is Dead desafía las categorías tradicionales. Sus títulos —cargados de emojis, símbolos y caracteres especiales— reflejan una estética digital nativa de internet, similar a la de fakemink o la escena cloud rap. Es un artista que no teme al error ni a la experimentación.</p>
           <div class="hero-actions" style="grid-template-columns:1fr">
             <a class="button magnetic" href="https://www.qobuz.com/us-en/interpreter/is-dead/10516617" target="_blank" rel="noopener">Discografía en Qobuz</a>
           </div>
           <div class="profile-socials" aria-label="Redes de Is Dead" style="margin-top:1.2rem">
             <a class="social-icon" href="https://open.spotify.com/artist/0EKvKtaSHhGT2Sppi8qZLS" target="_blank" rel="noopener" aria-label="Spotify"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm4.6 14.4a.7.7 0 0 1-.96.23c-2.63-1.6-5.94-1.97-9.84-1.08a.7.7 0 1 1-.31-1.36c4.26-.97 7.94-.55 10.88 1.24.33.2.43.64.23.97Zm1.37-3.03a.88.88 0 0 1-1.2.3c-3.02-1.86-7.63-2.39-11.2-1.31a.88.88 0 1 1-.51-1.68c4.09-1.24 9.17-.64 12.62 1.49.42.25.55.79.29 1.2Z"/></svg></a>
-            <a class="social-icon" href="https://www.qobuz.com/us-en/interpreter/is-dead/10516617" target="_blank" rel="noopener" aria-label="Qobuz"><svg viewBox="0 0 24 24"><path d="M3 14h3v2H3v-2Zm0-4h3v2H3v-2Zm0-4h3v2H3V6Zm5 8h3v2H8v-2Zm0-4h3v2H8v-2Zm0-4h3v2H8V6Zm5 8h3v2h-3v-2Zm0-4h3v2h-3v-2Zm0-4h3v2h-3V6Zm5 8h3v2h-3v-2Zm0-4h3v2h-3v-2Z"/></svg></a>
-            <a class="social-icon" href="https://www.last.fm/music/Is+Dead" target="_blank" rel="noopener" aria-label="Last.fm"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 4a6 6 0 1 1 0 12 6 6 0 0 1 0-12Zm-1.5 3.5v5l4.5-2.5-4.5-2.5Z"/></svg></a>
+            <a class="social-icon" href="https://www.instagram.com/isisdddk/?hl=es-la" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm5 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm6-1.5A1.25 1.25 0 1 0 18 8a1.25 1.25 0 0 0 0-2.5ZM12 9a3 3 0 1 1 0 6 3 3 0 0 1 0-6Z"/></svg></a>
+            <a class="social-icon" href="https://www.tiktok.com/@deadisisdead" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M14 2h3c.2 1.8 1.2 3.2 3 4v3c-1.2 0-2.4-.4-3.4-1v7.1a6.1 6.1 0 1 1-5.3-6V12a3.2 3.2 0 1 0 2.7 3.1V2Z"/></svg></a>
+            <a class="social-icon" href="https://www.youtube.com/channel/UCLKPDnIvAVkcPdp_B0NTHVA" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2C.5 9.1.5 12 .5 12s0 2.9.5 4.8a3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1c.5-1.9.5-4.8.5-4.8s0-2.9-.5-4.8ZM9.7 15.2V8.8l6 3.2-6 3.2Z"/></svg></a>
           </div>
         </div>
       </div>
@@ -332,25 +324,30 @@
       <div class="shell">
         <div class="section-head"><h2 class="section-title split-title">Discografía</h2><p class="eyeline">Lanzamientos oficiales. Una selección de su universo sonoro.</p></div>
         <div class="release-grid" aria-label="Lanzamientos principales">
-          <article class="release-card"><p>su amor me cura</p><div class="spotify-embed" data-spotify-uri="spotify:track:58vJUewQbH5WeKNw5vu7eM"></div></article>
-          <article class="release-card"><p>Zuper delicioso !</p><div class="spotify-embed" data-spotify-uri="spotify:track:6eIo3TSigNAQZmpnD9PfPe"></div></article>
-          <article class="release-card"><p>Tewo a comer !</p><div class="spotify-embed" data-spotify-uri="spotify:track:3vXxJXa1j9QXFTyGSJa2Ru"></div></article>
-          <article class="release-card"><p>Xtuamor</p><div class="spotify-embed" data-spotify-uri="spotify:track:4vXxJXa1j9QXFTyGSJa2Ru"></div></article>
-          <article class="release-card"><p>VMOSAFUMAR</p><div class="spotify-embed" data-spotify-uri="spotify:track:5vXxJXa1j9QXFTyGSJa2Ru"></div></article>
-          <article class="release-card"><p>mojigata.</p><div class="spotify-embed" data-spotify-uri="spotify:track:7vXxJXa1j9QXFTyGSJa2Ru"></div></article>
+          <article class="release-card"><p>VMOSAFUMAR</p><div class="spotify-embed" data-spotify-uri="spotify:track:4mI1Liom50jAKPu1vx1NmH"></div></article>
+          <article class="release-card"><p>ɐquı ɐfuera</p><div class="spotify-embed" data-spotify-uri="spotify:album:3Ebkb29h9MdWbgoclNGajt"></div></article>
+          <article class="release-card"><p>Yho</p><div class="spotify-embed" data-spotify-uri="spotify:track:0gmhXWpcbKjfT0iFh1NeOR"></div></article>
+          <article class="release-card"><p>su amor me cura</p><div class="spotify-embed" data-spotify-uri="spotify:track:1M8AdATPHjYCl9MW2I9Gor"></div></article>
+          <article class="release-card"><p>Zuper delicioso !</p><div class="spotify-embed" data-spotify-uri="spotify:track:3eVwqzkZYzpabNtVJIPZzj"></div></article>
+          <article class="release-card"><p>Tewo a comer !</p><div class="spotify-embed" data-spotify-uri="spotify:track:6Ia5Qc4QsmdHpG5tEaFASE"></div></article>
         </div>
 
         <div class="streaming-row" aria-label="Abrir Is Dead en plataformas de streaming">
-          <a class="stream-btn" href="https://open.spotify.com/artist/0EKvKtaSHhGT2Sppi8qZLS" target="_blank" rel="noopener" aria-label="Abrir en Spotify"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm4.6 14.4a.7.7 0 0 1-.96.23c-2.63-1.6-5.94-1.97-9.84-1.08a.7.7 0 1 1-.31-1.36c4.26-.97 7.94-.55 10.88 1.24.33.2.43.64.23.97Zm1.37-3.03a.88.88 0 0 1-1.2.3c-3.02-1.86-7.63-2.39-11.2-1.31a.88.88 0 1 1-.51-1.68c4.09-1.24 9.17-.64 12.62 1.49.42.25.55.79.29 1.2Zm.12-3.15C14.47 8.07 8.5 7.87 5.04 8.91a1.05 1.05 0 1 1-.61-2.01c3.98-1.2 10.58-.96 14.74 1.5a1.05 1.05 0 0 1-1.08 1.82Z"/></svg><span>Spotify</span></a>
-          <a class="stream-btn" href="https://music.apple.com/search?term=is+dead" target="_blank" rel="noopener" aria-label="Abrir en Apple Music"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm2.5 4v9.2a2.4 2.4 0 1 1-1.8-2.3V8l-4.2.92v7.78a2.4 2.4 0 1 1-1.8-2.3V7.4l7.8-1.72V6Z"/></svg><span>Apple Music</span></a>
-          <a class="stream-btn" href="https://music.youtube.com/search?q=is+dead" target="_blank" rel="noopener" aria-label="Abrir en YouTube Music"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 4a6 6 0 1 1 0 12 6 6 0 0 1 0-12Zm-1.5 3.5v5l4.5-2.5-4.5-2.5Z"/></svg><span>YouTube Music</span></a>
+          <a class="stream-btn" href="https://open.spotify.com/artist/0EKvKtaSHhGT2Sppi8qZLS" target="_blank" rel="noopener" aria-label="Abrir en Spotify"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm4.6 14.4a.7.7 0 0 1-.96.23c-2.63-1.6-5.94-1.97-9.84-1.08a.7.7 0 1 1-.31-1.36c4.26-.97 7.94-.55 10.88 1.24.33.2.43.64.23.97Zm1.37-3.03a.88.88 0 0 1-1.2.3c-3.02-1.86-7.63-2.39-11.2-1.31a.88.88 0 1 1-.51-1.68c4.09-1.24 9.17-.64 12.62 1.49.42.25.55.79.29 1.2Z"/></svg><span>Spotify</span></a>
           <a class="stream-btn" href="https://www.qobuz.com/us-en/interpreter/is-dead/10516617" target="_blank" rel="noopener" aria-label="Abrir en Qobuz"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 14h3v2H3v-2Zm0-4h3v2H3v-2Zm0-4h3v2H3V6Zm5 8h3v2H8v-2Zm0-4h3v2H8v-2Zm0-4h3v2H8V6Zm5 8h3v2h-3v-2Zm0-4h3v2h-3v-2Zm0-4h3v2h-3V6Zm5 8h3v2h-3v-2Zm0-4h3v2h-3v-2Z"/></svg><span>Qobuz</span></a>
-          <a class="stream-btn" href="https://www.last.fm/music/Is+Dead" target="_blank" rel="noopener" aria-label="Abrir en Last.fm"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 4a6 6 0 1 1 0 12 6 6 0 0 1 0-12Zm-1.5 3.5v5l4.5-2.5-4.5-2.5Z"/></svg><span>Last.fm</span></a>
+          <a class="stream-btn" href="https://www.youtube.com/channel/UCLKPDnIvAVkcPdp_B0NTHVA" target="_blank" rel="noopener" aria-label="Abrir en YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2C.5 9.1.5 12 .5 12s0 2.9.5 4.8a3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1c.5-1.9.5-4.8.5-4.8s0-2.9-.5-4.8ZM9.7 15.2V8.8l6 3.2-6 3.2Z"/></svg><span>YouTube</span></a>
         </div>
       </div>
     </section>
 
-    <section class="section" id="shows">
+    <section class="section merch" id="merch">
+      <div class="shell">
+        <div class="section-head"><h2 class="section-title split-title">Merch oficial</h2><p class="eyeline">1st Edition Limitada — Camisetas exclusivas de hombre y mujer.</p></div>
+        <div class="merch-grid" id="merchGrid"></div>
+      </div>
+    </section>
+
+    <section class="section rule" id="shows">
       <div class="shell shows-layout">
         <h2 class="section-title split-title">Shows en vivo</h2>
         <div class="show-list">
@@ -358,45 +355,6 @@
           <article class="show"><time class="show-date" datetime="2026-12-06">06 DIC</time><div><h3>Bogotá, Colombia</h3><p>Lugar por anunciar</p></div><span class="status">Por anunciar</span></article>
           <article class="show"><time class="show-date">ENE 2027</time><div><h3>Buenos Aires, Argentina</h3><p>Lugar por anunciar</p></div><span class="status">Próximamente</span></article>
         </div>
-      </div>
-    </section>
-
-    <section class="section visuals rule" id="visuals">
-      <div class="shell video-head">
-        <div><p class="eyeline">Videografía oficial</p><h2 class="section-title split-title">Registro visual</h2></div>
-        <div class="video-controls" aria-label="Controles de videos">
-          <button class="icon-button" id="videoPrev" type="button" aria-label="Video anterior"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 5-7 7 7 7"/></svg></button>
-          <button class="icon-button" id="videoNext" type="button" aria-label="Video siguiente"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></button>
-        </div>
-      </div>
-      <div class="video-rail shell" id="videoRail">
-        <a class="video-card image-reveal" href="https://www.youtube.com/watch?v=Plt1SrU21qQ" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/Plt1SrU21qQ/maxresdefault.jpg" alt="Video oficial de Is Dead" loading="lazy" decoding="async"><span class="video-label">Video principal <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></a>
-        <a class="video-card image-reveal" href="https://www.youtube.com/watch?v=bEUdUMIZ2J4" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/bEUdUMIZ2J4/maxresdefault.jpg" alt="Registro visual de Is Dead" loading="lazy" decoding="async"><span class="video-label">Archivo audiovisual <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></a>
-        <a class="video-card image-reveal" href="https://www.youtube.com/watch?v=eb-YBCDLS5k" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/eb-YBCDLS5k/maxresdefault.jpg" alt="Performance de Is Dead" loading="lazy" decoding="async"><span class="video-label">Performance <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></a>
-      </div>
-      <div class="video-more shell">
-        <a class="button primary magnetic" href="https://www.youtube.com/@isdead" target="_blank" rel="noopener">Ver más en YouTube <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
-      </div>
-    </section>
-
-    <section class="section" id="gallery">
-      <div class="shell">
-        <div class="section-head"><h2 class="section-title split-title">Galería</h2><p class="eyeline">Archivo fotográfico</p></div>
-        <div class="gallery-grid">
-          <figure class="gallery-item"><img src="https://i.pinimg.com/736x/f5/7c/f5/f57cf513675e19aea23d71738b2bb048.jpg" alt="Is Dead en estudio" loading="lazy" decoding="async"></figure>
-          <figure class="gallery-item"><img src="https://i.pinimg.com/736x/fe/d7/cc/fed7cc6e245357f4487d65c956dfe1ff.jpg" alt="Retrato de Is Dead" loading="lazy" decoding="async"></figure>
-          <figure class="gallery-item"><img src="https://i.pinimg.com/736x/6a/85/f8/6a85f8fa6be9f3b767295d0078ed2e61.jpg" alt="Archivo visual Is Dead" loading="lazy" decoding="async"></figure>
-          <figure class="gallery-item"><img src="https://i.pinimg.com/736x/5a/eb/e5/5aebe52ce1aaa1b5aa7f70db04f4ec39.jpg" alt="Is Dead en escena" loading="lazy" decoding="async"></figure>
-          <figure class="gallery-item"><img src="https://i.pinimg.com/736x/97/8e/17/978e17b41f9af5c48eb3f0c6f863ac83.jpg" alt="Detalle editorial Is Dead" loading="lazy" decoding="async"></figure>
-          <figure class="gallery-item"><img src="https://i.pinimg.com/736x/54/d9/31/54d931b90bf5a4ed0708785016ccfcbd.jpg" alt="Retrato en blanco y negro Is Dead" loading="lazy" decoding="async"></figure>
-        </div>
-      </div>
-    </section>
-
-    <section class="section merch rule" id="merch">
-      <div class="shell">
-        <div class="section-head"><h2 class="section-title split-title">Merch oficial</h2><p class="eyeline">1st Edition Limitada — Camisetas exclusivas de hombre y mujer.</p></div>
-        <div class="merch-grid" id="merchGrid"></div>
       </div>
     </section>
 
@@ -425,18 +383,22 @@
     <div class="footer-community">
       <small>Comunidad</small>
       <div class="community-links">
+        <a href="https://chat.whatsapp.com/HNAcIKsQTD88DQj7yaT0Li?s=cl&p=i&mlu=4&ilr=4" target="_blank" rel="noopener">WhatsApp Deadsitos</a>
+        <a href="https://www.instagram.com/isisdddk/?hl=es-la" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.tiktok.com/@deadisisdead" target="_blank" rel="noopener">TikTok</a>
         <a href="https://open.spotify.com/artist/0EKvKtaSHhGT2Sppi8qZLS" target="_blank" rel="noopener">Spotify</a>
         <a href="https://www.qobuz.com/us-en/interpreter/is-dead/10516617" target="_blank" rel="noopener">Qobuz</a>
-        <a href="https://www.last.fm/music/Is+Dead" target="_blank" rel="noopener">Last.fm</a>
+        <a href="https://www.youtube.com/channel/UCLKPDnIvAVkcPdp_B0NTHVA" target="_blank" rel="noopener">YouTube</a>
       </div>
     </div>
     <div class="footer-row">
       <div class="footer-socials" aria-label="Redes sociales">
         <a class="social-icon" href="https://open.spotify.com/artist/0EKvKtaSHhGT2Sppi8qZLS" target="_blank" rel="noopener" aria-label="Spotify"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm4.6 14.4a.7.7 0 0 1-.96.23c-2.63-1.6-5.94-1.97-9.84-1.08a.7.7 0 1 1-.31-1.36c4.26-.97 7.94-.55 10.88 1.24.33.2.43.64.23.97Zm1.37-3.03a.88.88 0 0 1-1.2.3c-3.02-1.86-7.63-2.39-11.2-1.31a.88.88 0 1 1-.51-1.68c4.09-1.24 9.17-.64 12.62 1.49.42.25.55.79.29 1.2Z"/></svg></a>
-        <a class="social-icon" href="https://www.qobuz.com/us-en/interpreter/is-dead/10516617" target="_blank" rel="noopener" aria-label="Qobuz"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 14h3v2H3v-2Zm0-4h3v2H3v-2Zm0-4h3v2H3V6Zm5 8h3v2H8v-2Zm0-4h3v2H8v-2Zm0-4h3v2H8V6Zm5 8h3v2h-3v-2Zm0-4h3v2h-3v-2Zm0-4h3v2h-3V6Zm5 8h3v2h-3v-2Zm0-4h3v2h-3v-2Z"/></svg></a>
-        <a class="social-icon" href="https://www.last.fm/music/Is+Dead" target="_blank" rel="noopener" aria-label="Last.fm"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 4a6 6 0 1 1 0 12 6 6 0 0 1 0-12Zm-1.5 3.5v5l4.5-2.5-4.5-2.5Z"/></svg></a>
+        <a class="social-icon" href="https://www.instagram.com/isisdddk/?hl=es-la" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm5 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm6-1.5A1.25 1.25 0 1 0 18 8a1.25 1.25 0 0 0 0-2.5ZM12 9a3 3 0 1 1 0 6 3 3 0 0 1 0-6Z"/></svg></a>
+        <a class="social-icon" href="https://www.tiktok.com/@deadisisdead" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2h3c.2 1.8 1.2 3.2 3 4v3c-1.2 0-2.4-.4-3.4-1v7.1a6.1 6.1 0 1 1-5.3-6V12a3.2 3.2 0 1 0 2.7 3.1V2Z"/></svg></a>
+        <a class="social-icon" href="https://www.youtube.com/channel/UCLKPDnIvAVkcPdp_B0NTHVA" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2C.5 9.1.5 12 .5 12s0 2.9.5 4.8a3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1c.5-1.9.5-4.8.5-4.8s0-2.9-.5-4.8ZM9.7 15.2V8.8l6 3.2-6 3.2Z"/></svg></a>
       </div>
-      <span>© 2026 IS DEAD — Nuevo Alternativo</span>
+      <span>© 2026 IS DEAD — World</span>
     </div>
   </footer>
 
@@ -622,15 +584,10 @@
         });
 
         gsap.from(".hero-title .line", { yPercent: 95, opacity: 0, duration: 1.2, stagger: 0.1, ease: "expo.out" });
+        gsap.from(".hero-accent", { scaleX: 0, opacity: 0, duration: 0.9, ease: "power3.out", delay: 0.4 });
         gsap.from(".hero-slogan", { y: 24, opacity: 0, duration: 0.7, ease: "power3.out", delay: 0.5 });
         gsap.from(".hero-actions .button", { y: 20, opacity: 0, duration: 0.5, stagger: 0.08, ease: "back.out(1.6)", delay: 0.65 });
         gsap.to(".hero-media img", { yPercent: 9, ease: "none", scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: true } });
-
-        const videos = $$(".video-card");
-        if(videos.length && innerWidth > 900){
-          gsap.from(videos, { y: 100, opacity: 0.25, stagger: 0.14, ease: "power3.out",
-            scrollTrigger: { trigger: ".video-rail", start: "top 82%", end: "bottom 65%", scrub: 0.7 } });
-        }
 
         $$(".release-card").forEach((card, i) => {
           gsap.from(card, { y: 60, opacity: 0, duration: 0.55 + i * 0.08, ease: "power4.out",
@@ -639,11 +596,6 @@
         $$(".product").forEach((card, i) => {
           gsap.from(card, { y: 70, opacity: 0, duration: 1.1, delay: i * 0.09, ease: "expo.out",
             scrollTrigger: { trigger: card, start: "top 92%", once: true } });
-        });
-
-        $$(".gallery-item").forEach((item, i) => {
-          gsap.from(item, { y: 40 + (i % 3) * 18, opacity: 0, duration: 0.85, delay: (i % 2) * 0.06, ease: "power3.out",
-            scrollTrigger: { trigger: item, start: "top 94%", once: true } });
         });
       }
 
@@ -664,17 +616,42 @@
         });
       }
 
+      /* --------------------------------------------------------------
+         SPOTIFY — Un solo reproductor a la vez
+         Se mantiene un controlador "activo". Cuando uno empieza a
+         reproducir, se pausan todos los demás. Se hace un reintento
+         a los 150ms por si el iframe no responde al primer pause().
+      -------------------------------------------------------------- */
       window.onSpotifyIframeApiReady = (IFrameAPI) => {
         const controllers = [];
-        const embeds = $$("[data-spotify-uri]");
-        embeds.forEach(el => {
+        let activeController = null;
+
+        const pauseAllExcept = (keep) => {
+          controllers.forEach(c => {
+            if (c === keep) return;
+            try { c.pause(); } catch(e){}
+            // Reintento por si el iframe ignora el primer comando
+            setTimeout(() => { try { c.pause(); } catch(e){} }, 150);
+            setTimeout(() => { try { c.pause(); } catch(e){} }, 500);
+          });
+        };
+
+        $$("[data-spotify-uri]").forEach(el => {
           const options = { uri: el.dataset.spotifyUri, width: "100%", height: 152 };
           IFrameAPI.createController(el, options, (controller) => {
             controllers.push(controller);
             controller.addListener("playback_update", (e) => {
-              if(!e.data) return;
-              if(!e.data.isPaused && !e.data.isBuffering){
-                controllers.forEach(other => { if(other !== controller) other.pause(); });
+              if (!e.data) return;
+              const isPlaying = !e.data.isPaused && !e.data.isBuffering;
+              if (isPlaying) {
+                if (activeController !== controller) {
+                  activeController = controller;
+                  pauseAllExcept(controller);
+                }
+              } else if (e.data.isPaused && activeController === controller) {
+                // Si el activo se pausa, dejar de marcarlo como activo
+                // para que el próximo play se registre correctamente
+                activeController = null;
               }
             });
           });
@@ -709,13 +686,6 @@
         $("#cartOpen").addEventListener("click", () => openCart(true));
         $("#cartClose").addEventListener("click", () => openCart(false));
         $("#cartOverlay").addEventListener("click", () => openCart(false));
-        const videoRail = $("#videoRail");
-        const moveVideo = direction => {
-          const card = $(".video-card", videoRail);
-          if(card) videoRail.scrollBy({ left: direction * (card.getBoundingClientRect().width + 16), behavior: reduced ? "auto" : "smooth" });
-        };
-        $("#videoPrev").addEventListener("click", () => moveVideo(-1));
-        $("#videoNext").addEventListener("click", () => moveVideo(1));
         addEventListener("keydown", event => { if(event.key === "Escape"){ closeMenu(); openCart(false); } });
         $("#contactForm").addEventListener("submit", event => {
           event.preventDefault();
