@@ -157,15 +157,27 @@
 
     /* ---------- MERCH ---------- */
     .merch{background:#0d0d0e}
-    .merch-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem}
-    .product{display:flex;flex-direction:column;min-height:440px;padding:1rem;background:var(--glass);border:1px solid var(--glass-line);border-radius:var(--radius-lg);backdrop-filter:blur(20px) saturate(1.4);-webkit-backdrop-filter:blur(20px) saturate(1.4)}
-    .product-visual{display:grid;place-items:center;aspect-ratio:4/5;margin-bottom:1.2rem;border-radius:var(--radius);background:radial-gradient(circle at 50% 38%,rgba(255,77,141,.22),transparent 52%),#0a0a0a;color:var(--neon-cyan);overflow:hidden}
-    .product-visual img{width:100%;height:100%;object-fit:cover}
+    .merch-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.25rem;max-width:1100px;margin-inline:auto}
+    .product{display:flex;flex-direction:column;min-height:520px;padding:1rem;background:var(--glass);border:1px solid var(--glass-line);border-radius:var(--radius-lg);backdrop-filter:blur(20px) saturate(1.4);-webkit-backdrop-filter:blur(20px) saturate(1.4)}
+    .product-visual{position:relative;display:block;aspect-ratio:4/5;margin-bottom:1rem;border-radius:var(--radius);background:radial-gradient(circle at 50% 38%,rgba(255,77,141,.22),transparent 52%),#0a0a0a;overflow:hidden}
+    .product-slides{display:flex;width:100%;height:100%;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior-inline:contain;touch-action:pan-x;-webkit-overflow-scrolling:touch}
+    .product-slides::-webkit-scrollbar{display:none}
+    .product-slide{flex:0 0 100%;width:100%;height:100%;object-fit:cover;scroll-snap-align:start;scroll-snap-stop:always;user-select:none;-webkit-user-drag:none}
+    .product-dots{position:absolute;bottom:.7rem;left:50%;transform:translateX(-50%);display:flex;gap:.35rem;z-index:3;padding:.3rem .5rem;border-radius:999px;background:rgba(0,0,0,.4);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+    .product-dots button{width:6px;height:6px;padding:0;border:none;border-radius:999px;background:rgba(255,255,255,.45);cursor:pointer;transition:width .3s ease,background-color .3s ease}
+    .product-dots button.active{width:20px;background:var(--neon-pink)}
+    .product-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:3;width:34px;height:34px;display:grid;place-items:center;border:1px solid rgba(255,255,255,.15);border-radius:50%;background:rgba(0,0,0,.45);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);color:#fff;cursor:pointer;opacity:0;transition:opacity .25s ease,background-color .25s ease,border-color .25s ease}
+    .product-arrow svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+    .product-arrow.prev{left:.6rem}
+    .product-arrow.next{right:.6rem}
+    .product-visual:hover .product-arrow{opacity:1}
+    .product-arrow:hover{background:var(--neon-pink);border-color:var(--neon-pink);color:#0a0a0a}
+    @media(hover:none){.product-arrow{display:none}}
     .product h3{margin:0;font-size:1rem;text-transform:uppercase}
     .product-price{margin:.45rem 0 1rem;color:var(--neon-pink);font-weight:800}
-    .product-badge{display:inline-block;margin-bottom:.5rem;padding:.2rem .6rem;border:1px solid var(--neon-cyan);border-radius:999px;color:var(--neon-cyan);font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+    .product-badge{display:inline-block;margin-bottom:.5rem;padding:.2rem .6rem;border:1px solid var(--neon-cyan);border-radius:999px;color:var(--neon-cyan);font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;width:max-content}
     .sizes{display:flex;gap:.4rem;margin-bottom:1rem}
-    .size{min-width:34px;height:34px;border:1px solid var(--line);border-radius:8px;background:transparent}
+    .size{min-width:34px;height:34px;border:1px solid var(--line);border-radius:8px;background:transparent;cursor:pointer}
     .size.active{background:var(--neon-pink);border-color:var(--neon-pink);color:#0a0a0a}
     .product .button{margin-top:auto;width:100%}
 
@@ -213,7 +225,6 @@
       .about-copy{padding-top:0}.about-portrait{width:min(100%,540px)}
       .shows-layout .section-title{position:static}
       .release-grid{grid-template-columns:1fr 1fr}
-      .merch-grid{grid-template-columns:1fr 1fr}
       .mobile-menu{display:grid}
       .footer-row{align-items:start;flex-direction:column}
     }
@@ -226,14 +237,13 @@
       .hero-actions .button{font-size:.66rem;padding:.7rem .6rem;letter-spacing:.08em;min-height:46px}
       .section-title{font-size:clamp(2.8rem,14vw,4.4rem)}
       .release-grid{grid-template-columns:1fr}
-      .merch-grid{grid-template-columns:1fr 1fr;gap:.6rem}
-      .product{min-height:auto;padding:.65rem;border-radius:12px}
-      .product-visual{aspect-ratio:1/1;margin-bottom:.6rem}
-      .product h3{font-size:.78rem;line-height:1.15}
-      .product-price{font-size:.8rem;margin:.3rem 0 .6rem}
-      .sizes{gap:.28rem;margin-bottom:.55rem}
-      .size{min-width:26px;height:26px;font-size:.6rem;border-radius:6px}
-      .product .button{font-size:.58rem;min-height:38px;padding:.5rem .4rem;letter-spacing:.06em}
+      .merch-grid{grid-template-columns:1fr;gap:.9rem;max-width:420px}
+      .product{min-height:auto;padding:.75rem;border-radius:14px}
+      .product h3{font-size:.95rem;line-height:1.15}
+      .product-price{font-size:.85rem;margin:.35rem 0 .7rem}
+      .sizes{gap:.3rem;margin-bottom:.6rem}
+      .size{min-width:30px;height:30px;font-size:.7rem;border-radius:7px}
+      .product .button{font-size:.68rem;min-height:44px;padding:.6rem .5rem;letter-spacing:.07em}
       .show{grid-template-columns:80px 1fr}.show .button,.show .status{grid-column:1/-1;width:100%}
       .form{grid-template-columns:1fr}.field{grid-column:1/-1}
       .cart{top:.25rem;right:.25rem;bottom:.25rem;width:calc(100vw - .5rem);padding:1rem}
@@ -342,7 +352,7 @@
 
     <section class="section merch" id="merch">
       <div class="shell">
-        <div class="section-head"><h2 class="section-title split-title">Merch oficial</h2><p class="eyeline">1st Edition Limitada — Camisetas exclusivas de hombre y mujer.</p></div>
+        <div class="section-head"><h2 class="section-title split-title">Merch oficial</h2><p class="eyeline">1st Edition Limitada — Camisetas exclusivas de hombre y mujer. Desliza para ver todas las fotos.</p></div>
         <div class="merch-grid" id="merchGrid"></div>
       </div>
     </section>
@@ -519,13 +529,83 @@
       function renderMerch(){
         $("#merchGrid").innerHTML = MERCH.map(product => `
           <article class="product" data-id="${product.id}">
-            <div class="product-visual"><img src="${product.images[0]}" alt="${product.name}" loading="lazy"></div>
+            <div class="product-visual">
+              <div class="product-slides" data-slider="${product.id}">
+                ${product.images.map((src,i)=>`<img class="product-slide" src="${src}" alt="${product.name} — foto ${i+1}" loading="lazy" draggable="false">`).join("")}
+              </div>
+              <button class="product-arrow prev" type="button" aria-label="Foto anterior" data-dir="-1"><svg viewBox="0 0 24 24"><path d="m15 5-7 7 7 7"/></svg></button>
+              <button class="product-arrow next" type="button" aria-label="Foto siguiente" data-dir="1"><svg viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></svg></button>
+              <div class="product-dots" role="tablist" aria-label="Fotos de ${product.name}">
+                ${product.images.map((_,i)=>`<button type="button" class="${i===0?"active":""}" data-index="${i}" aria-label="Ver foto ${i+1}"></button>`).join("")}
+              </div>
+            </div>
             <span class="product-badge">${product.badge}</span>
             <h3>${product.name}</h3>
             <p class="product-price">$${product.price.toFixed(2)} · ${product.color}</p>
             ${product.sizes.length ? `<div class="sizes">${product.sizes.map((size,index)=>`<button class="size${index===0?" active":""}" type="button" data-size="${size}">${size}</button>`).join("")}</div>` : ""}
             <button class="button add-product magnetic" type="button">Añadir al carrito</button>
           </article>`).join("");
+        initMerchCarousels();
+      }
+
+      /* Carrusel de fotos para cada camiseta */
+      function initMerchCarousels(){
+        $$(".product-visual").forEach(visual => {
+          const track = $(".product-slides", visual);
+          const dots = $$(".product-dots button", visual);
+          const prev = $(".product-arrow.prev", visual);
+          const next = $(".product-arrow.next", visual);
+          if(!track || !dots.length) return;
+
+          const setActive = (index) => {
+            dots.forEach((d,i) => d.classList.toggle("active", i === index));
+          };
+
+          const goTo = (index) => {
+            const clamped = Math.max(0, Math.min(dots.length - 1, index));
+            track.scrollTo({ left: clamped * track.clientWidth, behavior: reduced ? "auto" : "smooth" });
+            setActive(clamped);
+          };
+
+          // Actualizar dots según scroll
+          let ticking = false;
+          track.addEventListener("scroll", () => {
+            if(ticking) return;
+            ticking = true;
+            requestAnimationFrame(() => {
+              const index = Math.round(track.scrollLeft / track.clientWidth);
+              setActive(index);
+              ticking = false;
+            });
+          }, { passive: true });
+
+          // Clic en dots
+          dots.forEach((dot,i) => {
+            dot.addEventListener("click", (e) => { e.preventDefault(); goTo(i); });
+          });
+
+          // Flechas
+          prev?.addEventListener("click", (e) => {
+            e.preventDefault();
+            const current = Math.round(track.scrollLeft / track.clientWidth);
+            goTo(current - 1);
+          });
+          next?.addEventListener("click", (e) => {
+            e.preventDefault();
+            const current = Math.round(track.scrollLeft / track.clientWidth);
+            goTo(current + 1);
+          });
+
+          // Reajustar posición al redimensionar (para que no se desalinee)
+          let resizeTimer;
+          addEventListener("resize", () => {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(() => {
+              const index = Math.round(track.scrollLeft / track.clientWidth);
+              track.scrollTo({ left: index * track.clientWidth, behavior: "auto" });
+            }, 120);
+          }, { passive: true });
+        });
       }
 
       class SmokeScene {
@@ -616,12 +696,7 @@
         });
       }
 
-      /* --------------------------------------------------------------
-         SPOTIFY — Un solo reproductor a la vez
-         Se mantiene un controlador "activo". Cuando uno empieza a
-         reproducir, se pausan todos los demás. Se hace un reintento
-         a los 150ms por si el iframe no responde al primer pause().
-      -------------------------------------------------------------- */
+      /* Spotify — un solo reproductor a la vez */
       window.onSpotifyIframeApiReady = (IFrameAPI) => {
         const controllers = [];
         let activeController = null;
@@ -630,7 +705,6 @@
           controllers.forEach(c => {
             if (c === keep) return;
             try { c.pause(); } catch(e){}
-            // Reintento por si el iframe ignora el primer comando
             setTimeout(() => { try { c.pause(); } catch(e){} }, 150);
             setTimeout(() => { try { c.pause(); } catch(e){} }, 500);
           });
@@ -649,8 +723,6 @@
                   pauseAllExcept(controller);
                 }
               } else if (e.data.isPaused && activeController === controller) {
-                // Si el activo se pausa, dejar de marcarlo como activo
-                // para que el próximo play se registre correctamente
                 activeController = null;
               }
             });
