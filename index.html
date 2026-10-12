@@ -1,0 +1,762 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#0a0a0a">
+  <meta name="description" content="Is Dead — Reggaetón alternativo, indie y hip-hop experimental. Música para el nuevo milenio desde la escena independiente.">
+  <meta property="og:title" content="IS DEAD | Nuevo Alternativo">
+  <meta property="og:description" content="Is Dead — Reggaetón alternativo, indie y hip-hop experimental. Un universo visual digital.">
+  <meta property="og:image" content="https://i.scdn.co/image/ab6761610000e5eb6e5f7c3e0e0f0e0e0e0e0e0e">
+  <meta property="og:type" content="website">
+  <title>IS DEAD | Nuevo Alternativo</title>
+
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="preconnect" href="https://i.ytimg.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="image" href="https://i.scdn.co/image/ab6761610000e5eb6e5f7c3e0e0f0e0e0e0e0e0e" fetchpriority="high">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    @font-face{font-family:'Space Grotesk';src:url("https://cdn.jsdelivr.net/npm/@fontsource/space-grotesk@5.0.18/files/space-grotesk-latin-400-normal.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+    @font-face{font-family:'Space Grotesk';src:url("https://cdn.jsdelivr.net/npm/@fontsource/space-grotesk@5.0.18/files/space-grotesk-latin-700-normal.woff2") format("woff2");font-weight:700;font-style:normal;font-display:swap}
+    @font-face{font-family:'Syne';src:url("https://cdn.jsdelivr.net/npm/@fontsource/syne@5.0.20/files/syne-latin-400-normal.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+    @font-face{font-family:'Syne';src:url("https://cdn.jsdelivr.net/npm/@fontsource/syne@5.0.20/files/syne-latin-700-normal.woff2") format("woff2");font-weight:700;font-style:normal;font-display:swap}
+    @font-face{font-family:'Syne';src:url("https://cdn.jsdelivr.net/npm/@fontsource/syne@5.0.20/files/syne-latin-800-normal.woff2") format("woff2");font-weight:800;font-style:normal;font-display:swap}
+
+    :root{
+      --ink:#f0ede8;--muted:#8a8580;--black:#0a0a0a;--black-2:#111112;
+      --neon-pink:#ff4d8d;--neon-cyan:#00e5ff;--neon-purple:#b44dff;
+      --acid:#d4ff3f;
+      --line:rgba(240,237,232,.1);
+      --pad:clamp(1rem,3.8vw,4.5rem);
+      --section:clamp(4.5rem,9vw,8rem);
+      --ease:cubic-bezier(.16,1,.3,1);--radius-sm:10px;--radius:14px;--radius-lg:18px;
+      --font-display:'Syne',sans-serif;
+      --font-body:'Space Grotesk',sans-serif;
+      --glass:rgba(255,255,255,.02);
+      --glass-line:rgba(255,255,255,.07);
+    }
+    *{box-sizing:border-box}
+    html{background:var(--black);scrollbar-color:var(--neon-pink) #111;scrollbar-width:thin}
+    html.lenis,html.lenis body{height:auto}.lenis.lenis-smooth{scroll-behavior:auto!important}.lenis.lenis-stopped{overflow:hidden}
+    body{margin:0;background:var(--black);color:var(--ink);font-family:var(--font-body);line-height:1.5;overflow-x:hidden}
+    body.menu-open,body.cart-open{overflow:hidden}
+    ::selection{background:var(--neon-pink);color:#fff}
+    ::-webkit-scrollbar{width:8px}::-webkit-scrollbar-track{background:#111}::-webkit-scrollbar-thumb{background:var(--neon-pink)}
+    a{color:inherit;text-decoration:none}button,input,textarea{font:inherit}button{color:inherit}
+    img{display:block;max-width:100%}figure{margin:0}
+    :focus-visible{outline:2px solid var(--neon-cyan);outline-offset:5px}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    .shell{width:min(100% - (var(--pad) * 2),1440px);margin-inline:auto}
+    .section{position:relative;padding-block:var(--section);z-index:2}
+    .eyeline{max-width:70ch;color:var(--muted);font-size:clamp(.92rem,1.25vw,1.08rem)}
+    .section-title{max-width:12ch;margin:0;font-size:clamp(3rem,8vw,6rem);line-height:.88;letter-spacing:-.04em;text-transform:uppercase;text-wrap:balance;font-family:var(--font-display)}
+    .section-head{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(260px,.7fr);gap:clamp(1.5rem,5vw,5rem);align-items:end;margin-bottom:clamp(2rem,5vw,4rem)}
+    .rule{border-top:1px solid var(--line)}
+    .accent{color:var(--neon-pink)}
+    .button{--bx:0px;--by:0px;display:inline-flex;align-items:center;justify-content:center;gap:.55rem;min-height:52px;padding:.9rem 1.35rem;border:1px solid var(--line);border-radius:var(--radius-sm);background:#161617;color:#fff;text-transform:uppercase;letter-spacing:.11em;font-size:.75rem;font-weight:700;transform:translate3d(var(--bx),var(--by),0);transition:border-color .3s ease,background-color .3s ease,color .3s ease;will-change:transform}
+    .button:hover{border-color:var(--neon-pink);background:#1a1218}.button.primary{background:var(--neon-pink);border-color:var(--neon-pink);color:#0a0a0a}.button.primary:hover{background:#ff6b9d}
+    .button[disabled]{opacity:.4}
+    .icon-button{display:grid;place-items:center;width:44px;height:44px;border:1px solid var(--line);border-radius:var(--radius-sm);background:#141415;transition:border-color .25s,background-color .25s}
+    .icon-button:hover{border-color:var(--neon-pink)}
+    .icon-button svg,.button svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+    .button svg{width:14px;height:14px}
+
+    /* ---------- ATMÓSFERA ---------- */
+    #webgl{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:.6}
+    .static-atmosphere{position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(55% 46% at 72% 33%,rgba(255,77,141,.2),transparent 70%),radial-gradient(45% 60% at 4% 74%,rgba(0,229,255,.12),transparent 75%),linear-gradient(180deg,rgba(0,0,0,.05),rgba(0,0,0,.72))}
+    .grain{position:fixed;inset:0;z-index:7;pointer-events:none;opacity:.1;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.32'/%3E%3C/svg%3E");mix-blend-mode:soft-light}
+
+    /* ---------- LOADER ---------- */
+    #loader{position:fixed;inset:0;z-index:9999;display:grid;place-items:center;background:#050505;clip-path:circle(150% at 50% 50%);will-change:clip-path}
+    .loader-inner{width:min(520px,82vw);text-align:center}.loader-glitch{width:100%;overflow:visible}.loader-glitch path{fill:none;stroke:var(--neon-pink);stroke-width:2;vector-effect:non-scaling-stroke;filter:drop-shadow(0 0 8px rgba(255,77,141,.65));stroke-dasharray:1;stroke-dashoffset:1}
+    .boot-copy{display:flex;justify-content:space-between;margin-top:1.2rem;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:#8a8580}.boot-status{color:var(--neon-cyan)}
+
+    /* ---------- NAV ---------- */
+    .nav{position:fixed;top:0;left:0;right:0;z-index:80;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:2rem;padding:1rem var(--pad);background:linear-gradient(180deg,rgba(10,10,10,.96),rgba(10,10,10,.62));border-bottom:1px solid rgba(255,255,255,.06);backdrop-filter:blur(14px)}
+    .brand{font-weight:800;letter-spacing:-.04em;font-size:1.15rem;color:#fff;font-family:var(--font-display)}
+    .nav-links{display:flex;justify-content:center;gap:clamp(1rem,2.3vw,2.5rem);font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase}.nav-links a{color:#a8a29e;transition:color .25s ease}.nav-links a:hover{color:#fff}
+    .nav-actions{display:flex;align-items:center;gap:.6rem}.menu-toggle{display:none}
+    .nav-socials,.profile-socials{display:flex;align-items:center;gap:.65rem}.social-icon{display:grid;place-items:center;width:38px;height:38px;border:1px solid transparent;border-radius:50%;color:#c8c1ba;transition:color .25s ease,border-color .25s ease,background-color .25s ease}.social-icon:hover{color:#fff;border-color:var(--neon-pink);background:rgba(255,77,141,.12)}.social-icon svg{width:17px;height:17px;fill:currentColor}
+    .cart-count{position:absolute;top:-5px;right:-5px;display:grid;place-items:center;width:18px;height:18px;background:var(--neon-pink);border-radius:50%;font-size:.6rem;font-weight:800;color:#0a0a0a}
+
+    /* ---------- HERO ---------- */
+    .hero{min-height:100svh;position:relative;z-index:2;display:grid;place-items:center;padding:clamp(7rem,13vh,10rem) var(--pad) clamp(4rem,8vh,7rem);overflow:hidden;text-align:center}
+    .hero-media{position:absolute;inset:0;z-index:-1;background:linear-gradient(135deg,#1a0a14,#0a0a0a 65%)}
+    .hero-media:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 48%,rgba(10,10,10,.05),rgba(10,10,10,.82) 72%),linear-gradient(0deg,#0a0a0a 0%,transparent 42%,rgba(10,10,10,.35) 100%);z-index:1}
+    .hero-media img{width:100%;height:100%;object-fit:cover;object-position:56% 25%;filter:grayscale(.3) contrast(1.2) brightness(.5);transform:scale(1.035);will-change:transform;position:relative;z-index:0}
+    .hero-grid{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.25rem;width:min(100%,1380px);margin:auto;position:relative;z-index:2}
+    .hero-title{position:relative;margin:0;font-size:clamp(4.5rem,13.6vw,12rem);line-height:.76;letter-spacing:-.075em;text-transform:uppercase;white-space:nowrap;font-family:var(--font-display)}
+    .hero-title::before{content:"";position:absolute;inset:-40% -12%;background:radial-gradient(ellipse at center,rgba(255,77,141,.35),transparent 62%);filter:blur(70px);z-index:-1;pointer-events:none;animation:heroGlow 5.5s ease-in-out infinite alternate}
+    @keyframes heroGlow{from{opacity:.5;transform:scale(1)}to{opacity:.95;transform:scale(1.09)}}
+    .hero-title .line{display:inline-block}
+    .hero-title .dead{margin-left:.08em;color:var(--neon-cyan);text-shadow:0 0 42px rgba(0,229,255,.55)}
+    .hero-slogan{margin:0;color:#fff;font-family:var(--font-display);font-size:clamp(1.25rem,2vw,1.7rem);font-style:italic;font-weight:600;letter-spacing:.16em;text-transform:uppercase}
+    .hero-actions{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-top:1rem;width:min(100%,520px)}
+    .hero-actions .button{width:100%}
+    .hero-rail{position:absolute;right:var(--pad);top:50%;transform:translateY(-50%) rotate(90deg);transform-origin:100% 50%;font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;color:#7a7570}
+
+    /* ---------- ABOUT ---------- */
+    .about-grid{display:grid;grid-template-columns:minmax(300px,.8fr) minmax(0,1.2fr);gap:clamp(2rem,6vw,6rem);align-items:start}
+    .about-portrait{position:relative;aspect-ratio:4/5;overflow:hidden;border-radius:var(--radius-lg);transform:translateZ(0)}
+    .about-portrait img{width:100%;height:100%;object-fit:cover;transition:transform .9s var(--ease);will-change:transform;filter:grayscale(.2) contrast(1.1)}
+    .about-portrait:hover img{transform:scale(1.025)}
+    .about-portrait:after{content:"";position:absolute;inset:0;border:1px solid var(--line);border-radius:inherit;box-shadow:inset 0 -120px 90px rgba(0,0,0,.38);pointer-events:none}
+    .about-copy{padding-top:clamp(0rem,4vw,4rem)}.about-copy p{max-width:64ch;color:#b0aaa4;font-size:clamp(1.05rem,1.6vw,1.3rem)}.about-copy strong{color:#fff;font-weight:780}
+    .artist-slogan{margin:clamp(1.5rem,3vw,2.5rem) 0;font-family:var(--font-display);font-size:clamp(3.2rem,7vw,7.3rem)!important;font-style:italic;font-weight:700;line-height:.78;letter-spacing:-.05em;text-transform:uppercase;color:var(--neon-cyan)!important}
+
+    /* ---------- CATÁLOGO (GLASS) ---------- */
+    .catalog{background:linear-gradient(180deg,rgba(17,17,18,.82),rgba(10,10,10,.98));position:relative;overflow:hidden}
+    .catalog::before{content:"";position:absolute;top:22%;left:8%;width:70%;height:70%;background:radial-gradient(circle,rgba(255,77,141,.25),transparent 68%);filter:blur(90px);z-index:0;pointer-events:none}
+    .catalog .shell{position:relative;z-index:1}
+    .release-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
+    .release-card{padding:1rem;background:var(--glass);border:1px solid var(--glass-line);border-radius:var(--radius);transform:translateZ(0);backdrop-filter:blur(24px) saturate(1.6);-webkit-backdrop-filter:blur(24px) saturate(1.6);box-shadow:inset 0 1px 0 rgba(255,255,255,.05),0 24px 48px -24px rgba(0,0,0,.65);transition:transform .5s var(--ease),border-color .3s ease,background-color .3s ease}
+    .release-card:hover{transform:translate3d(0,-5px,0);border-color:rgba(255,77,141,.62);background:rgba(255,255,255,.04)}
+    .release-card p{margin:.1rem 0 .75rem;color:var(--neon-pink);font-size:.68rem;font-weight:780;letter-spacing:.13em;text-transform:uppercase}
+    .spotify-embed{width:100%;height:152px;border-radius:var(--radius-sm);overflow:hidden;background:rgba(0,0,0,.25)}
+
+    /* ---------- STREAMING ROW ---------- */
+    .streaming-row{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:.5rem;margin-top:clamp(1.5rem,4vw,2.5rem)}
+    .stream-btn{display:inline-flex;align-items:center;justify-content:center;gap:.55rem;padding:.7rem 1rem;border:1px solid var(--glass-line);border-radius:999px;background:var(--glass);backdrop-filter:blur(16px) saturate(1.4);-webkit-backdrop-filter:blur(16px) saturate(1.4);color:#e6e0d9;font-size:.72rem;font-weight:750;letter-spacing:.06em;text-transform:uppercase;transition:border-color .25s ease,background-color .25s ease,color .25s ease,transform .3s var(--ease);transform:translateZ(0)}
+    .stream-btn:hover{border-color:var(--neon-cyan);background:rgba(0,229,255,.12);color:#fff;transform:translateY(-2px)}
+    .stream-btn svg{width:16px;height:16px;fill:currentColor;flex-shrink:0}
+    @media(max-width:620px){.stream-btn span{display:none}.stream-btn{padding:.7rem;width:44px;height:44px}}
+
+    /* ---------- SHOWS ---------- */
+    .shows-layout{display:grid;grid-template-columns:minmax(220px,.45fr) minmax(0,1fr);gap:clamp(2rem,6vw,6rem)}
+    .shows-layout .section-title{position:sticky;top:120px;height:max-content}
+    .show-list{border-top:1px solid var(--line)}
+    .show{display:grid;grid-template-columns:110px 1fr auto;gap:1.4rem;align-items:center;padding:1.6rem 0;border-bottom:1px solid var(--line)}
+    .show-date{font-family:var(--font-display);font-size:clamp(2rem,4vw,3.4rem);font-style:italic;font-weight:700;color:var(--neon-pink);letter-spacing:-.04em;line-height:.8}
+    .show h3{margin:0;font-size:1.05rem;text-transform:uppercase}.show p{margin:.3rem 0 0;color:var(--muted);font-size:.85rem}
+    .show .status{color:#6e6964;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase}
+
+    /* ---------- VISUALES ---------- */
+    .visuals{overflow:hidden}
+    .video-head{display:flex;align-items:end;justify-content:space-between;gap:2rem;margin-bottom:clamp(2rem,5vw,4rem)}
+    .video-controls{display:flex;gap:.6rem}
+    .video-rail{display:flex;gap:1rem;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior-inline:contain;touch-action:pan-x;padding-bottom:.5rem}
+    .video-rail::-webkit-scrollbar{display:none}
+    .video-card{position:relative;flex:0 0 min(70vw,820px);aspect-ratio:16/10;overflow:hidden;border-radius:var(--radius-lg);scroll-snap-align:start;transform:translateZ(0)}
+    .video-card img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.22) brightness(.68);transition:transform .9s var(--ease),filter .5s ease;will-change:transform}
+    .video-card:hover img{transform:scale(1.045);filter:grayscale(.25) contrast(1.1) brightness(.75)}
+    .video-card:after{content:"";position:absolute;inset:0;border:1px solid var(--line);border-radius:inherit;pointer-events:none}
+    .video-label{position:absolute;left:1.25rem;right:1.25rem;bottom:1.2rem;display:flex;justify-content:space-between;align-items:end;z-index:2;font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em}
+    .video-label svg{width:32px;height:32px;fill:#fff}
+    .video-more{display:flex;justify-content:center;margin-top:clamp(1.5rem,4vw,2.5rem)}
+
+    /* ---------- GALERÍA ---------- */
+    .gallery-grid{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-flow:dense;gap:clamp(.45rem,1vw,.85rem);transform:translateZ(0)}
+    .gallery-item{min-height:250px;overflow:hidden;border-radius:var(--radius);transition:transform .55s var(--ease),opacity .55s var(--ease);transform:translateZ(0)}
+    .gallery-item:nth-child(1){grid-column:span 7;grid-row:span 2}
+    .gallery-item:nth-child(2){grid-column:span 5}
+    .gallery-item:nth-child(3){grid-column:span 5}
+    .gallery-item:nth-child(4),.gallery-item:nth-child(5),.gallery-item:nth-child(6){grid-column:span 4}
+    .gallery-item img{width:100%;height:100%;min-height:250px;object-fit:cover;filter:grayscale(1) contrast(1.15);transition:filter .55s ease;will-change:transform}
+    .gallery-grid:hover .gallery-item:not(:hover){opacity:.4;transform:translateZ(0) scale(.98)}
+    .gallery-item:hover{transform:translateZ(0) scale(1.05);z-index:2}
+    .gallery-item:hover img{filter:grayscale(.1) contrast(1.04)}
+
+    /* ---------- MERCH ---------- */
+    .merch{background:#0d0d0e}
+    .merch-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem}
+    .product{display:flex;flex-direction:column;min-height:440px;padding:1rem;background:var(--glass);border:1px solid var(--glass-line);border-radius:var(--radius-lg);backdrop-filter:blur(20px) saturate(1.4);-webkit-backdrop-filter:blur(20px) saturate(1.4)}
+    .product-visual{display:grid;place-items:center;aspect-ratio:4/5;margin-bottom:1.2rem;border-radius:var(--radius);background:radial-gradient(circle at 50% 38%,rgba(255,77,141,.22),transparent 52%),#0a0a0a;color:var(--neon-cyan);overflow:hidden}
+    .product-visual img{width:100%;height:100%;object-fit:cover}
+    .product h3{margin:0;font-size:1rem;text-transform:uppercase}
+    .product-price{margin:.45rem 0 1rem;color:var(--neon-pink);font-weight:800}
+    .product-badge{display:inline-block;margin-bottom:.5rem;padding:.2rem .6rem;border:1px solid var(--neon-cyan);border-radius:999px;color:var(--neon-cyan);font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+    .sizes{display:flex;gap:.4rem;margin-bottom:1rem}
+    .size{min-width:34px;height:34px;border:1px solid var(--line);border-radius:8px;background:transparent}
+    .size.active{background:var(--neon-pink);border-color:var(--neon-pink);color:#0a0a0a}
+    .product .button{margin-top:auto;width:100%}
+
+    /* ---------- BOOKING ---------- */
+    .booking{background:var(--ink);color:#0b0b0c}.booking .section-title{max-width:15ch}
+    .booking-grid{display:grid;grid-template-columns:minmax(250px,.75fr) minmax(0,1.25fr);gap:clamp(2rem,6vw,6rem);align-items:start}
+    .contact-links{display:grid;gap:1rem}
+    .contact-links small{margin-top:.7rem;color:#5f5a55;font-size:.64rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+    .contact-links a{width:max-content;border-bottom:1px solid #8f8981;padding-bottom:.2rem;font-weight:720}
+    .form{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
+    .field{position:relative}.field.full{grid-column:1/-1}
+    .field input,.field textarea{width:100%;padding:1rem;border:1px solid #aaa39b;border-radius:var(--radius-sm);background:rgba(255,255,255,.22);color:#090909;resize:vertical}
+    .field label{display:block;margin-bottom:.45rem;font-size:.68rem;font-weight:750;letter-spacing:.1em;text-transform:uppercase;color:#5f5a55}
+    .form .button{grid-column:1/-1;justify-self:start;margin-top:1rem}
+
+    /* ---------- FOOTER ---------- */
+    .footer{position:relative;z-index:2;padding:clamp(3rem,6vw,5rem) var(--pad) 2rem;background:#0a0a0a;overflow:hidden}
+    .footer-community{display:grid;gap:1rem;margin-bottom:clamp(2rem,4vw,3rem);padding-bottom:clamp(2rem,4vw,3rem);border-bottom:1px solid var(--line)}
+    .footer-community small{color:#7a7570;font-size:.64rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase}
+    .community-links{display:flex;flex-wrap:wrap;gap:.6rem}
+    .community-links a{padding:.65rem 1rem;border:1px solid var(--line);border-radius:999px;background:var(--glass);color:#d0cac4;font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;transition:border-color .25s ease,background-color .25s ease,color .25s ease,transform .3s var(--ease)}
+    .community-links a:hover{border-color:var(--neon-pink);background:rgba(255,77,141,.12);color:#fff;transform:translateY(-2px)}
+    .footer-row{display:flex;justify-content:space-between;align-items:end;gap:2rem;color:#8a8580;font-size:.76rem;text-transform:uppercase;letter-spacing:.08em}
+    .footer-socials{display:flex;gap:.55rem}
+
+    /* ---------- CARRITO ---------- */
+    .cart-overlay{position:fixed;inset:0;z-index:105;background:rgba(0,0,0,.72);opacity:0;visibility:hidden;transition:opacity .35s ease,visibility .35s}.cart-overlay.open{opacity:1;visibility:visible}
+    .cart{position:fixed;top:.5rem;right:.5rem;bottom:.5rem;z-index:110;width:min(420px,calc(100vw - 1rem));padding:1.4rem;background:#0d0d0e;border:1px solid var(--line);border-radius:var(--radius-lg);transform:translateX(calc(100% + 1rem));transition:transform .55s var(--ease);display:flex;flex-direction:column;will-change:transform;overscroll-behavior:contain}.cart.open{transform:translateX(0)}
+    .cart-head{display:flex;justify-content:space-between;align-items:center;padding-bottom:1rem;border-bottom:1px solid var(--line)}.cart h2{margin:0;font-size:1.2rem;text-transform:uppercase}
+    .cart-empty{margin:auto;text-align:center;color:var(--muted)}.cart-foot{padding-top:1rem;border-top:1px solid var(--line)}
+    .cart-foot input{width:100%;margin-bottom:.7rem;padding:.8rem;border:1px solid var(--line);border-radius:var(--radius-sm);background:#080808;color:#fff}
+    .cart-foot .button{width:100%}
+
+    /* ---------- MENÚ MÓVIL ---------- */
+    .mobile-menu{position:fixed;inset:0;z-index:75;display:none;place-items:center;padding:6.5rem 1.25rem 2rem;background:#0a0a0a;opacity:0;visibility:hidden;overflow-y:auto;transition:opacity .35s ease,visibility .35s}.mobile-menu.open{opacity:1;visibility:visible}
+    .mobile-menu nav{display:grid;gap:.7rem;text-align:center}
+    .mobile-menu a{font-size:clamp(1.8rem,9vw,3.6rem);font-weight:820;letter-spacing:-.04em;text-transform:uppercase}
+
+    .word{display:inline-block;overflow:hidden;vertical-align:bottom}.word-inner{display:inline-block}
+
+    @media(max-width:900px){
+      .nav{grid-template-columns:auto 1fr}.nav-links,.nav-socials{display:none}.nav-actions{grid-column:2;justify-self:end}.menu-toggle{display:grid}
+      .section-head,.about-grid,.shows-layout,.booking-grid{grid-template-columns:1fr}
+      .hero-title{font-size:clamp(4rem,18vw,8rem)}.hero-rail{display:none}.section-head{align-items:start}
+      .about-copy{padding-top:0}.about-portrait{width:min(100%,540px)}
+      .shows-layout .section-title{position:static}
+      .video-card{flex-basis:min(82vw,620px)}
+      .release-grid{grid-template-columns:1fr 1fr}
+      .merch-grid{grid-template-columns:1fr 1fr}
+      .mobile-menu{display:grid}
+      .gallery-item:nth-child(n){grid-column:span 6;grid-row:auto}
+      .gallery-item:nth-child(1){grid-column:span 12}
+      .footer-row{align-items:start;flex-direction:column}
+    }
+    @media(max-width:620px){
+      .nav{padding-block:.72rem;gap:.7rem}.nav .button{display:none}
+      .hero{padding-inline:1rem}.hero-media img{object-position:58% 30%}
+      .hero-title{font-size:clamp(3.85rem,20vw,6.3rem);line-height:.78}
+      .hero-slogan{letter-spacing:.2em}
+      .hero-actions{width:100%;gap:.5rem}
+      .hero-actions .button{font-size:.66rem;padding:.7rem .6rem;letter-spacing:.08em;min-height:46px}
+      .section-title{font-size:clamp(2.8rem,14vw,4.4rem)}
+      .video-head{align-items:start}
+      .video-card{flex-basis:88vw}
+      .release-grid{grid-template-columns:1fr}
+      .merch-grid{grid-template-columns:1fr 1fr;gap:.6rem}
+      .product{min-height:auto;padding:.65rem;border-radius:12px}
+      .product-visual{aspect-ratio:1/1;margin-bottom:.6rem}
+      .product h3{font-size:.78rem;line-height:1.15}
+      .product-price{font-size:.8rem;margin:.3rem 0 .6rem}
+      .sizes{gap:.28rem;margin-bottom:.55rem}
+      .size{min-width:26px;height:26px;font-size:.6rem;border-radius:6px}
+      .product .button{font-size:.58rem;min-height:38px;padding:.5rem .4rem;letter-spacing:.06em}
+      .show{grid-template-columns:80px 1fr}.show .button,.show .status{grid-column:1/-1;width:100%}
+      .gallery-item:nth-child(n),.gallery-item:nth-child(1){grid-column:span 6;grid-row:auto;min-height:190px}
+      .gallery-item img{min-height:190px}
+      .form{grid-template-columns:1fr}.field{grid-column:1/-1}
+      .cart{top:.25rem;right:.25rem;bottom:.25rem;width:calc(100vw - .5rem);padding:1rem}
+      .mobile-menu a{font-size:clamp(1.65rem,8.5vw,2.8rem)}
+    }
+    @media(prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto!important}
+      *,*:before,*:after{animation-duration:.001ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}
+      .grain,#webgl{display:none!important}
+      .button{will-change:auto}
+      .about-portrait img,.gallery-item img,.video-card img{will-change:auto}
+      .word,.word-inner{display:inline}.word{overflow:visible}
+    }
+  </style>
+</head>
+<body>
+  <div id="loader" aria-live="polite" aria-label="Iniciando sistema">
+    <div class="loader-inner">
+      <svg class="loader-glitch" viewBox="0 0 600 90" aria-hidden="true"><path pathLength="1" d="M0 46H60L80 46L100 10L130 79L160 46H220L240 46L260 22L290 68L320 46H380L400 46L420 7L450 82L480 46H600"/></svg>
+      <div class="boot-copy"><span id="bootText">Cargando</span><span class="boot-status"><span id="bootPercent">0</span>%</span></div>
+    </div>
+  </div>
+
+  <canvas id="webgl" aria-hidden="true"></canvas>
+  <div class="static-atmosphere" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="nav">
+    <a class="brand" href="#top" aria-label="IS DEAD, inicio">IS DEAD</a>
+    <nav class="nav-links" aria-label="Navegación principal">
+      <a href="#artist">Artista</a><a href="#music">Discografía</a><a href="#shows">Shows</a><a href="#visuals">Visuales</a><a href="#gallery">Galería</a><a href="#merch">Merch</a><a href="#booking">Booking</a>
+    </nav>
+    <div class="nav-actions">
+      <div class="nav-socials" aria-label="Redes sociales">
+        <a class="social-icon" href="https://open.spotify.com/artist/0EKvKtaSHhGT2Sppi8qZLS" target="_blank" rel="noopener" aria-label="Spotify"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm4.6 14.4a.7.7 0 0 1-.96.23c-2.63-1.6-5.94-1.97-9.84-1.08a.7.7 0 1 1-.31-1.36c4.26-.97 7.94-.55 10.88 1.24.33.2.43.64.23.97Zm1.37-3.03a.88.88 0 0 1-1.2.3c-3.02-1.86-7.63-2.39-11.2-1.31a.88.88 0 1 1-.51-1.68c4.09-1.24 9.17-.64 12.62 1.49.42.25.55.79.29 1.2Zm.12-3.15C14.47 8.07 8.5 7.87 5.04 8.91a1.05 1.05 0 1 1-.61-2.01c3.98-1.2 10.58-.96 14.74 1.5a1.05 1.05 0 0 1-1.08 1.82Z"/></svg></a>
+        <a class="social-icon" href="https://www.qobuz.com/us-en/interpreter/is-dead/10516617" target="_blank" rel="noopener" aria-label="Qobuz"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 14h3v2H3v-2Zm0-4h3v2H3v-2Zm0-4h3v2H3V6Zm5 8h3v2H8v-2Zm0-4h3v2H8v-2Zm0-4h3v2H8V6Zm5 8h3v2h-3v-2Zm0-4h3v2h-3v-2Zm0-4h3v2h-3V6Zm5 8h3v2h-3v-2Zm0-4h3v2h-3v-2Z"/></svg></a>
+        <a class="social-icon" href="https://www.last.fm/music/Is+Dead" target="_blank" rel="noopener" aria-label="Last.fm"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 4a6 6 0 1 1 0 12 6 6 0 0 1 0-12Zm-1.5 3.5v5l4.5-2.5-4.5-2.5Z"/></svg></a>
+      </div>
+      <button class="icon-button" id="cartOpen" type="button" aria-label="Abrir carrito" style="position:relative">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12l-1 12H7L6 8Z"/><path d="M9 9V6a3 3 0 0 1 6 0v3"/></svg><span class="cart-count" id="cartCount">0</span>
+      </button>
+      <button class="icon-button menu-toggle" id="menuToggle" type="button" aria-label="Abrir menú" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true"><nav aria-label="Navegación móvil"><a href="#artist">Artista</a><a href="#music">Discografía</a><a href="#shows">Shows</a><a href="#visuals">Visuales</a><a href="#gallery">Galería</a><a href="#merch">Merch</a><a href="#booking">Booking</a></nav></div>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-media" aria-hidden="true"><img src="https://i.scdn.co/image/ab6761610000e5eb6e5f7c3e0e0f0e0e0e0e0e0e" alt="" fetchpriority="high"></div>
+      <div class="hero-grid">
+        <h1 class="hero-title"><span class="line">IS</span><span class="line dead">DEAD</span></h1>
+        <p class="hero-slogan">Nuevo alternativo</p>
+        <div class="hero-actions">
+          <a class="button primary magnetic" href="#artist">Explorar</a>
+          <a class="button magnetic" href="https://open.spotify.com/artist/0EKvKtaSHhGT2Sppi8qZLS" target="_blank" rel="noopener">Escuchar ahora</a>
+        </div>
+      </div>
+      <div class="hero-rail">Reggaetón alternativo — Indie — Hip-Hop experimental</div>
+    </section>
+
+    <section class="section" id="artist">
+      <div class="shell about-grid">
+        <figure class="about-portrait image-reveal"><img src="https://i.scdn.co/image/ab6761610000e5eb6e5f7c3e0e0f0e0e0e0e0e0e" alt="Is Dead" loading="lazy" decoding="async"></figure>
+        <div class="about-copy">
+          <h2 class="section-title split-title">Is Dead</h2>
+          <p class="artist-slogan split-copy">Nuevo alternativo</p>
+          <p><strong>Is Dead</strong> es un proyecto musical y sello independiente que fusiona el <strong>reggaetón alternativo</strong>, el <strong>indie</strong> y el <strong>hip-hop experimental</strong> en un universo sonoro propio. Su música habita un espacio entre lo melancólico y lo juguetón, con producciones atmosféricas que priorizan la textura sobre la claridad.</p>
+          <p>Con un catálogo de más de 60 lanzamientos en plataformas como Qobuz y Spotify, Is Dead desafía las categorías tradicionales. Sus títulos —cargados de emojis, símbolos y caracteres especiales— reflejan una estética digital nativa de internet, similar a la de fakemink o la escena cloud rap. Es un artista que no teme al error ni a la experimentación.</p>
+          <div class="hero-actions" style="grid-template-columns:1fr">
+            <a class="button magnetic" href="https://www.qobuz.com/us-en/interpreter/is-dead/10516617" target="_blank" rel="noopener">Discografía en Qobuz</a>
+          </div>
+          <div class="profile-socials" aria-label="Redes de Is Dead" style="margin-top:1.2rem">
+            <a class="social-icon" href="https://open.spotify.com/artist/0EKvKtaSHhGT2Sppi8qZLS" target="_blank" rel="noopener" aria-label="Spotify"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm4.6 14.4a.7.7 0 0 1-.96.23c-2.63-1.6-5.94-1.97-9.84-1.08a.7.7 0 1 1-.31-1.36c4.26-.97 7.94-.55 10.88 1.24.33.2.43.64.23.97Zm1.37-3.03a.88.88 0 0 1-1.2.3c-3.02-1.86-7.63-2.39-11.2-1.31a.88.88 0 1 1-.51-1.68c4.09-1.24 9.17-.64 12.62 1.49.42.25.55.79.29 1.2Z"/></svg></a>
+            <a class="social-icon" href="https://www.qobuz.com/us-en/interpreter/is-dead/10516617" target="_blank" rel="noopener" aria-label="Qobuz"><svg viewBox="0 0 24 24"><path d="M3 14h3v2H3v-2Zm0-4h3v2H3v-2Zm0-4h3v2H3V6Zm5 8h3v2H8v-2Zm0-4h3v2H8v-2Zm0-4h3v2H8V6Zm5 8h3v2h-3v-2Zm0-4h3v2h-3v-2Zm0-4h3v2h-3V6Zm5 8h3v2h-3v-2Zm0-4h3v2h-3v-2Z"/></svg></a>
+            <a class="social-icon" href="https://www.last.fm/music/Is+Dead" target="_blank" rel="noopener" aria-label="Last.fm"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 4a6 6 0 1 1 0 12 6 6 0 0 1 0-12Zm-1.5 3.5v5l4.5-2.5-4.5-2.5Z"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section catalog rule" id="music">
+      <div class="shell">
+        <div class="section-head"><h2 class="section-title split-title">Discografía</h2><p class="eyeline">Lanzamientos oficiales. Una selección de su universo sonoro.</p></div>
+        <div class="release-grid" aria-label="Lanzamientos principales">
+          <article class="release-card"><p>su amor me cura</p><div class="spotify-embed" data-spotify-uri="spotify:track:58vJUewQbH5WeKNw5vu7eM"></div></article>
+          <article class="release-card"><p>Zuper delicioso !</p><div class="spotify-embed" data-spotify-uri="spotify:track:6eIo3TSigNAQZmpnD9PfPe"></div></article>
+          <article class="release-card"><p>Tewo a comer !</p><div class="spotify-embed" data-spotify-uri="spotify:track:3vXxJXa1j9QXFTyGSJa2Ru"></div></article>
+          <article class="release-card"><p>Xtuamor</p><div class="spotify-embed" data-spotify-uri="spotify:track:4vXxJXa1j9QXFTyGSJa2Ru"></div></article>
+          <article class="release-card"><p>VMOSAFUMAR</p><div class="spotify-embed" data-spotify-uri="spotify:track:5vXxJXa1j9QXFTyGSJa2Ru"></div></article>
+          <article class="release-card"><p>mojigata.</p><div class="spotify-embed" data-spotify-uri="spotify:track:7vXxJXa1j9QXFTyGSJa2Ru"></div></article>
+        </div>
+
+        <div class="streaming-row" aria-label="Abrir Is Dead en plataformas de streaming">
+          <a class="stream-btn" href="https://open.spotify.com/artist/0EKvKtaSHhGT2Sppi8qZLS" target="_blank" rel="noopener" aria-label="Abrir en Spotify"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm4.6 14.4a.7.7 0 0 1-.96.23c-2.63-1.6-5.94-1.97-9.84-1.08a.7.7 0 1 1-.31-1.36c4.26-.97 7.94-.55 10.88 1.24.33.2.43.64.23.97Zm1.37-3.03a.88.88 0 0 1-1.2.3c-3.02-1.86-7.63-2.39-11.2-1.31a.88.88 0 1 1-.51-1.68c4.09-1.24 9.17-.64 12.62 1.49.42.25.55.79.29 1.2Zm.12-3.15C14.47 8.07 8.5 7.87 5.04 8.91a1.05 1.05 0 1 1-.61-2.01c3.98-1.2 10.58-.96 14.74 1.5a1.05 1.05 0 0 1-1.08 1.82Z"/></svg><span>Spotify</span></a>
+          <a class="stream-btn" href="https://music.apple.com/search?term=is+dead" target="_blank" rel="noopener" aria-label="Abrir en Apple Music"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm2.5 4v9.2a2.4 2.4 0 1 1-1.8-2.3V8l-4.2.92v7.78a2.4 2.4 0 1 1-1.8-2.3V7.4l7.8-1.72V6Z"/></svg><span>Apple Music</span></a>
+          <a class="stream-btn" href="https://music.youtube.com/search?q=is+dead" target="_blank" rel="noopener" aria-label="Abrir en YouTube Music"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 4a6 6 0 1 1 0 12 6 6 0 0 1 0-12Zm-1.5 3.5v5l4.5-2.5-4.5-2.5Z"/></svg><span>YouTube Music</span></a>
+          <a class="stream-btn" href="https://www.qobuz.com/us-en/interpreter/is-dead/10516617" target="_blank" rel="noopener" aria-label="Abrir en Qobuz"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 14h3v2H3v-2Zm0-4h3v2H3v-2Zm0-4h3v2H3V6Zm5 8h3v2H8v-2Zm0-4h3v2H8v-2Zm0-4h3v2H8V6Zm5 8h3v2h-3v-2Zm0-4h3v2h-3v-2Zm0-4h3v2h-3V6Zm5 8h3v2h-3v-2Zm0-4h3v2h-3v-2Z"/></svg><span>Qobuz</span></a>
+          <a class="stream-btn" href="https://www.last.fm/music/Is+Dead" target="_blank" rel="noopener" aria-label="Abrir en Last.fm"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 4a6 6 0 1 1 0 12 6 6 0 0 1 0-12Zm-1.5 3.5v5l4.5-2.5-4.5-2.5Z"/></svg><span>Last.fm</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="shows">
+      <div class="shell shows-layout">
+        <h2 class="section-title split-title">Shows en vivo</h2>
+        <div class="show-list">
+          <article class="show"><time class="show-date" datetime="2026-11-15">15 NOV</time><div><h3>Ciudad de México</h3><p>Club nocturno / show en vivo</p></div><a class="button magnetic" href="https://open.spotify.com/artist/0EKvKtaSHhGT2Sppi8qZLS" target="_blank" rel="noopener">Entradas</a></article>
+          <article class="show"><time class="show-date" datetime="2026-12-06">06 DIC</time><div><h3>Bogotá, Colombia</h3><p>Lugar por anunciar</p></div><span class="status">Por anunciar</span></article>
+          <article class="show"><time class="show-date">ENE 2027</time><div><h3>Buenos Aires, Argentina</h3><p>Lugar por anunciar</p></div><span class="status">Próximamente</span></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section visuals rule" id="visuals">
+      <div class="shell video-head">
+        <div><p class="eyeline">Videografía oficial</p><h2 class="section-title split-title">Registro visual</h2></div>
+        <div class="video-controls" aria-label="Controles de videos">
+          <button class="icon-button" id="videoPrev" type="button" aria-label="Video anterior"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 5-7 7 7 7"/></svg></button>
+          <button class="icon-button" id="videoNext" type="button" aria-label="Video siguiente"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></button>
+        </div>
+      </div>
+      <div class="video-rail shell" id="videoRail">
+        <a class="video-card image-reveal" href="https://www.youtube.com/watch?v=Plt1SrU21qQ" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/Plt1SrU21qQ/maxresdefault.jpg" alt="Video oficial de Is Dead" loading="lazy" decoding="async"><span class="video-label">Video principal <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></a>
+        <a class="video-card image-reveal" href="https://www.youtube.com/watch?v=bEUdUMIZ2J4" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/bEUdUMIZ2J4/maxresdefault.jpg" alt="Registro visual de Is Dead" loading="lazy" decoding="async"><span class="video-label">Archivo audiovisual <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></a>
+        <a class="video-card image-reveal" href="https://www.youtube.com/watch?v=eb-YBCDLS5k" target="_blank" rel="noopener"><img src="https://i.ytimg.com/vi/eb-YBCDLS5k/maxresdefault.jpg" alt="Performance de Is Dead" loading="lazy" decoding="async"><span class="video-label">Performance <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></a>
+      </div>
+      <div class="video-more shell">
+        <a class="button primary magnetic" href="https://www.youtube.com/@isdead" target="_blank" rel="noopener">Ver más en YouTube <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+      </div>
+    </section>
+
+    <section class="section" id="gallery">
+      <div class="shell">
+        <div class="section-head"><h2 class="section-title split-title">Galería</h2><p class="eyeline">Archivo fotográfico</p></div>
+        <div class="gallery-grid">
+          <figure class="gallery-item"><img src="https://i.pinimg.com/736x/f5/7c/f5/f57cf513675e19aea23d71738b2bb048.jpg" alt="Is Dead en estudio" loading="lazy" decoding="async"></figure>
+          <figure class="gallery-item"><img src="https://i.pinimg.com/736x/fe/d7/cc/fed7cc6e245357f4487d65c956dfe1ff.jpg" alt="Retrato de Is Dead" loading="lazy" decoding="async"></figure>
+          <figure class="gallery-item"><img src="https://i.pinimg.com/736x/6a/85/f8/6a85f8fa6be9f3b767295d0078ed2e61.jpg" alt="Archivo visual Is Dead" loading="lazy" decoding="async"></figure>
+          <figure class="gallery-item"><img src="https://i.pinimg.com/736x/5a/eb/e5/5aebe52ce1aaa1b5aa7f70db04f4ec39.jpg" alt="Is Dead en escena" loading="lazy" decoding="async"></figure>
+          <figure class="gallery-item"><img src="https://i.pinimg.com/736x/97/8e/17/978e17b41f9af5c48eb3f0c6f863ac83.jpg" alt="Detalle editorial Is Dead" loading="lazy" decoding="async"></figure>
+          <figure class="gallery-item"><img src="https://i.pinimg.com/736x/54/d9/31/54d931b90bf5a4ed0708785016ccfcbd.jpg" alt="Retrato en blanco y negro Is Dead" loading="lazy" decoding="async"></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section merch rule" id="merch">
+      <div class="shell">
+        <div class="section-head"><h2 class="section-title split-title">Merch oficial</h2><p class="eyeline">1st Edition Limitada — Camisetas exclusivas de hombre y mujer.</p></div>
+        <div class="merch-grid" id="merchGrid"></div>
+      </div>
+    </section>
+
+    <section class="section booking" id="booking">
+      <div class="shell">
+        <div class="section-head"><h2 class="section-title split-title">Booking & contacto</h2><p class="eyeline" style="color:#5f5a55">Para shows en vivo, contrataciones, producciones y colaboraciones.</p></div>
+        <div class="booking-grid">
+          <div class="contact-links">
+            <small>Management & correo</small><a href="mailto:booking@isdead.xyz">booking@isdead.xyz</a>
+            <small>WhatsApp directo</small><a href="https://wa.me/593967987244?text=Hola%20Is%20Dead,%20quiero%20cotizar%20un%20show" target="_blank" rel="noopener">+593 96 798 7244</a>
+            <small>Base operativa</small><span>Ciudad de México, MX</span>
+          </div>
+          <form class="form" id="contactForm">
+            <div class="field"><label for="name">Nombre o promotora</label><input id="name" name="Nombre" autocomplete="name" required></div>
+            <div class="field"><label for="email">Correo</label><input id="email" name="Correo" type="email" autocomplete="email" required></div>
+            <div class="field full"><label for="subject">Asunto</label><input id="subject" name="Asunto" required></div>
+            <div class="field full"><label for="message">Detalles de la propuesta</label><textarea id="message" name="Mensaje" rows="4" required></textarea></div>
+            <button class="button primary magnetic" type="submit">Enviar propuesta</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-community">
+      <small>Comunidad</small>
+      <div class="community-links">
+        <a href="https://open.spotify.com/artist/0EKvKtaSHhGT2Sppi8qZLS" target="_blank" rel="noopener">Spotify</a>
+        <a href="https://www.qobuz.com/us-en/interpreter/is-dead/10516617" target="_blank" rel="noopener">Qobuz</a>
+        <a href="https://www.last.fm/music/Is+Dead" target="_blank" rel="noopener">Last.fm</a>
+      </div>
+    </div>
+    <div class="footer-row">
+      <div class="footer-socials" aria-label="Redes sociales">
+        <a class="social-icon" href="https://open.spotify.com/artist/0EKvKtaSHhGT2Sppi8qZLS" target="_blank" rel="noopener" aria-label="Spotify"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm4.6 14.4a.7.7 0 0 1-.96.23c-2.63-1.6-5.94-1.97-9.84-1.08a.7.7 0 1 1-.31-1.36c4.26-.97 7.94-.55 10.88 1.24.33.2.43.64.23.97Zm1.37-3.03a.88.88 0 0 1-1.2.3c-3.02-1.86-7.63-2.39-11.2-1.31a.88.88 0 1 1-.51-1.68c4.09-1.24 9.17-.64 12.62 1.49.42.25.55.79.29 1.2Z"/></svg></a>
+        <a class="social-icon" href="https://www.qobuz.com/us-en/interpreter/is-dead/10516617" target="_blank" rel="noopener" aria-label="Qobuz"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 14h3v2H3v-2Zm0-4h3v2H3v-2Zm0-4h3v2H3V6Zm5 8h3v2H8v-2Zm0-4h3v2H8v-2Zm0-4h3v2H8V6Zm5 8h3v2h-3v-2Zm0-4h3v2h-3v-2Zm0-4h3v2h-3V6Zm5 8h3v2h-3v-2Zm0-4h3v2h-3v-2Z"/></svg></a>
+        <a class="social-icon" href="https://www.last.fm/music/Is+Dead" target="_blank" rel="noopener" aria-label="Last.fm"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 4a6 6 0 1 1 0 12 6 6 0 0 1 0-12Zm-1.5 3.5v5l4.5-2.5-4.5-2.5Z"/></svg></a>
+      </div>
+      <span>© 2026 IS DEAD — Nuevo Alternativo</span>
+    </div>
+  </footer>
+
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <aside class="cart" id="cart" aria-hidden="true" aria-label="Carrito de merch">
+    <div class="cart-head"><h2>Tu carrito</h2><button class="icon-button" id="cartClose" type="button" aria-label="Cerrar carrito"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5l14 14M19 5 5 19"/></svg></button></div>
+    <ul id="cartItems" style="list-style:none;padding:1rem 0;margin:0;display:grid;gap:1rem;overflow:auto"></ul>
+    <div class="cart-foot">
+      <p id="cartTotal" style="display:flex;justify-content:space-between;font-weight:800"><span>Total</span><span>$0.00</span></p>
+      <input id="cartName" placeholder="Tu nombre">
+      <input id="cartNote" placeholder="Ciudad / nota de entrega">
+      <button class="button primary" id="checkout" type="button">Pedir por WhatsApp</button>
+    </div>
+  </aside>
+
+  <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://open.spotify.com/embed/iframe-api/v1" async></script>
+  <script>
+    (() => {
+      "use strict";
+      const $ = (selector, root = document) => root.querySelector(selector);
+      const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
+      const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const finePointer = matchMedia("(hover: hover) and (pointer: fine)").matches;
+
+      const WHATSAPP = "593967987244";
+
+      const MERCH = [
+        {
+          id:"tee-white",
+          name:'Camiseta IS DEAD — White',
+          price:30,
+          badge:"1st Edition",
+          color:"Blanco",
+          sizes:["S","M","L","XL"],
+          images:[
+            "https://i.pinimg.com/736x/b3/a5/12/b3a512f0796e88fddf374bc8478998af.jpg",
+            "https://i.pinimg.com/736x/7e/c0/4d/7ec04d6a19f2260e6cfb9186b7b05f24.jpg",
+            "https://i.pinimg.com/736x/4e/06/42/4e0642226da1bc08fbcfb4513de4f626.jpg",
+            "https://i.pinimg.com/736x/4a/af/2b/4aaf2bf922bd99cfa1bd803cbff04787.jpg"
+          ]
+        },
+        {
+          id:"tee-black",
+          name:'Camiseta IS DEAD — Black',
+          price:30,
+          badge:"1st Edition",
+          color:"Negro",
+          sizes:["S","M","L","XL"],
+          images:[
+            "https://i.pinimg.com/736x/a1/8c/60/a18c60030f5ec420c396850110500aa6.jpg",
+            "https://i.pinimg.com/736x/46/39/d7/4639d7cb767fa4c54d0821cfad730138.jpg",
+            "https://i.pinimg.com/736x/ee/2a/14/ee2a146a83537b28072e5d3d8208b4bf.jpg",
+            "https://i.pinimg.com/736x/35/e1/b9/35e1b9056d9fda7a065664ec52c3099a.jpg"
+          ]
+        }
+      ];
+
+      let lenis = null;
+      let smoke = null;
+      let pageVisible = !document.hidden;
+
+      class Cart {
+        constructor(){
+          this.items = [];
+          try{ this.items = JSON.parse(localStorage.getItem("isdead_cart")) || []; }catch(e){}
+          $("#merchGrid").addEventListener("click", event => this.handle(event));
+          $("#cartItems").addEventListener("click", event => {
+            const button = event.target.closest("[data-key]");
+            if(button) this.change(button.dataset.key, +button.dataset.delta);
+          });
+          $("#checkout").addEventListener("click", () => this.checkout());
+          this.render();
+        }
+        handle(event){
+          const productEl = event.target.closest(".product"); if(!productEl) return;
+          const size = event.target.closest(".size");
+          if(size){ $$(".size", productEl).forEach(el => el.classList.toggle("active", el === size)); return; }
+          if(!event.target.closest(".add-product")) return;
+          const product = MERCH.find(item => item.id === productEl.dataset.id);
+          const selected = $(".size.active", productEl);
+          const chosen = selected ? selected.dataset.size : "";
+          const key = `${product.id}|${chosen}`;
+          const existing = this.items.find(item => item.key === key);
+          existing ? existing.qty++ : this.items.push({key, name:product.name, price:product.price, size:chosen, qty:1});
+          this.render(); openCart(true);
+        }
+        change(key, delta){
+          const item = this.items.find(entry => entry.key === key); if(!item) return;
+          item.qty += delta;
+          if(item.qty < 1) this.items = this.items.filter(entry => entry !== item);
+          this.render();
+        }
+        render(){
+          try{ localStorage.setItem("isdead_cart", JSON.stringify(this.items)); }catch(e){}
+          const count = this.items.reduce((sum,item) => sum + item.qty, 0);
+          const total = this.items.reduce((sum,item) => sum + item.price * item.qty, 0);
+          $("#cartCount").textContent = count;
+          $("#cartItems").innerHTML = this.items.length
+            ? this.items.map(item => `<li style="display:grid;grid-template-columns:1fr auto;gap:1rem;border-bottom:1px solid var(--line);padding-bottom:1rem"><div><strong>${item.name}</strong><small style="display:block;color:var(--muted)">${item.size?`Talla ${item.size} · `:""}$${item.price.toFixed(2)}</small></div><div><button data-key="${item.key}" data-delta="-1" style="background:transparent;border:1px solid var(--line);border-radius:6px;width:26px;height:26px">−</button> ${item.qty} <button data-key="${item.key}" data-delta="1" style="background:transparent;border:1px solid var(--line);border-radius:6px;width:26px;height:26px">+</button></div></li>`).join("")
+            : '<li class="cart-empty"><p>Tu carrito está vacío.</p></li>';
+          $("#cartTotal").innerHTML = `<span>Total</span><span>$${total.toFixed(2)}</span>`;
+          $("#checkout").disabled = !count;
+        }
+        checkout(){
+          if(!this.items.length) return;
+          const lines = this.items.map(item => `${item.qty}x ${item.name}${item.size?` (${item.size})`:""} — $${(item.price*item.qty).toFixed(2)}`);
+          const name = $("#cartName").value.trim(), note = $("#cartNote").value.trim();
+          const total = this.items.reduce((sum,item) => sum + item.price * item.qty, 0);
+          const message = `Hola IS DEAD, quiero pedir merch:\n\n${lines.join("\n")}\n\nTotal: $${total.toFixed(2)}${name?`\nNombre: ${name}`:""}${note?`\nEntrega: ${note}`:""}`;
+          window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(message)}`, "_blank", "noopener");
+        }
+      }
+
+      function renderMerch(){
+        $("#merchGrid").innerHTML = MERCH.map(product => `
+          <article class="product" data-id="${product.id}">
+            <div class="product-visual"><img src="${product.images[0]}" alt="${product.name}" loading="lazy"></div>
+            <span class="product-badge">${product.badge}</span>
+            <h3>${product.name}</h3>
+            <p class="product-price">$${product.price.toFixed(2)} · ${product.color}</p>
+            ${product.sizes.length ? `<div class="sizes">${product.sizes.map((size,index)=>`<button class="size${index===0?" active":""}" type="button" data-size="${size}">${size}</button>`).join("")}</div>` : ""}
+            <button class="button add-product magnetic" type="button">Añadir al carrito</button>
+          </article>`).join("");
+      }
+
+      class SmokeScene {
+        constructor(canvas){
+          this.canvas = canvas; this.raf = 0; this.velocity = 0; this.running = false;
+          if(reduced || (navigator.hardwareConcurrency && navigator.hardwareConcurrency < 4) || !window.THREE){ this.destroy(); return; }
+          this.scene = new THREE.Scene(); this.camera = new THREE.OrthographicCamera(-1,1,1,-1,0,1);
+          this.renderer = new THREE.WebGLRenderer({canvas,alpha:true,antialias:false,powerPreference:"low-power"});
+          this.renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+          this.material = new THREE.ShaderMaterial({transparent:true,depthWrite:false,uniforms:{uTime:{value:0},uVelocity:{value:0},uResolution:{value:new THREE.Vector2(innerWidth,innerHeight)}},vertexShader:`void main(){gl_Position=vec4(position,1.0);}`,fragmentShader:`precision mediump float;uniform float uTime;uniform float uVelocity;uniform vec2 uResolution;float hash(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}float noise(vec2 p){vec2 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);return mix(mix(hash(i),hash(i+vec2(1.,0.)),f.x),mix(hash(i+vec2(0.,1.)),hash(i+vec2(1.,1.)),f.x),f.y);}float fbm(vec2 p){float v=0.,a=.5;for(int i=0;i<4;i++){v+=a*noise(p);p=p*2.03+11.7;a*=.5;}return v;}void main(){vec2 uv=gl_FragCoord.xy/uResolution.xy;vec2 p=(uv-.5)*vec2(uResolution.x/uResolution.y,1.)*2.2;float speed=clamp(abs(uVelocity)*.012,0.,1.5);p.y-=uTime*(.035+speed*.06);p.x+=sin(p.y*1.8+uTime*.12)*.13;float n=fbm(p+fbm(p*1.7+uTime*.03));float smoke=smoothstep(.43,.82,n)*(.32+speed*.14);vec3 neon=vec3(.38,.006,.055);float vignette=1.-smoothstep(.25,1.,length(uv-.5));gl_FragColor=vec4(neon,smoke*vignette);}`});
+          this.mesh = new THREE.Mesh(new THREE.PlaneGeometry(2,2),this.material); this.scene.add(this.mesh);
+          this.resize = () => { this.renderer.setSize(innerWidth,innerHeight,false); this.material.uniforms.uResolution.value.set(innerWidth,innerHeight); };
+          addEventListener("resize",this.resize,{passive:true}); this.resize(); this.start();
+        }
+        setVelocity(value){ this.velocity = value || 0; }
+        frame = time => { if(!this.running) return; this.material.uniforms.uTime.value = time * .001; this.material.uniforms.uVelocity.value += (this.velocity - this.material.uniforms.uVelocity.value) * .08; this.renderer.render(this.scene,this.camera); this.raf = requestAnimationFrame(this.frame); };
+        start(){ if(!this.renderer || this.running || !pageVisible) return; this.running = true; this.raf = requestAnimationFrame(this.frame); }
+        stop(){ this.running = false; cancelAnimationFrame(this.raf); }
+        destroy(){ this.stop(); if(this.mesh){ this.mesh.geometry.dispose(); this.material.dispose(); this.renderer.dispose(); } this.canvas.style.display = "none"; removeEventListener("resize",this.resize); }
+      }
+
+      function initScroll(){
+        if(!window.gsap || !window.ScrollTrigger) return;
+        gsap.registerPlugin(ScrollTrigger);
+        if(window.Lenis && !reduced){
+          lenis = new Lenis({autoRaf:true,lerp:.08,smoothWheel:true});
+          lenis.on("scroll", event => { ScrollTrigger.update(); if(smoke) smoke.setVelocity(event.velocity); });
+        }
+        $$("a[href^='#']").forEach(anchor => anchor.addEventListener("click", event => {
+          const id = anchor.getAttribute("href");
+          const target = id === "#top" ? 0 : $(id);
+          if(target === null) return;
+          event.preventDefault(); closeMenu();
+          lenis ? lenis.scrollTo(target,{offset:-72,duration:1.3}) : (id === "#top" ? scrollTo(0,0) : target.scrollIntoView());
+        }));
+        if(reduced) return;
+
+        $$(".split-title,.split-copy").forEach((element, i) => {
+          const text = element.textContent.trim();
+          element.setAttribute("aria-label", text);
+          element.innerHTML = text.split(/\s+/).map(word => `<span class="word" aria-hidden="true"><span class="word-inner">${word}</span></span>`).join(" ");
+          gsap.from(element.querySelectorAll(".word-inner"), {
+            y: 40, opacity: 0,
+            duration: i % 2 === 0 ? 0.9 : 0.4,
+            stagger: i % 3 === 0 ? 0.05 : 0.02,
+            ease: i % 2 === 0 ? "power4.out" : "power3.out",
+            scrollTrigger: { trigger: element, start: "top 86%", once: true }
+          });
+        });
+
+        $$(".image-reveal").forEach(image => {
+          gsap.fromTo(image,
+            { scale: 0.88, opacity: 0.35 },
+            { scale: 1, opacity: 1, ease: "none",
+              scrollTrigger: { trigger: image, start: "top 95%", end: "center 55%", scrub: 0.6 } });
+        });
+
+        gsap.from(".hero-title .line", { yPercent: 95, opacity: 0, duration: 1.2, stagger: 0.1, ease: "expo.out" });
+        gsap.from(".hero-slogan", { y: 24, opacity: 0, duration: 0.7, ease: "power3.out", delay: 0.5 });
+        gsap.from(".hero-actions .button", { y: 20, opacity: 0, duration: 0.5, stagger: 0.08, ease: "back.out(1.6)", delay: 0.65 });
+        gsap.to(".hero-media img", { yPercent: 9, ease: "none", scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: true } });
+
+        const videos = $$(".video-card");
+        if(videos.length && innerWidth > 900){
+          gsap.from(videos, { y: 100, opacity: 0.25, stagger: 0.14, ease: "power3.out",
+            scrollTrigger: { trigger: ".video-rail", start: "top 82%", end: "bottom 65%", scrub: 0.7 } });
+        }
+
+        $$(".release-card").forEach((card, i) => {
+          gsap.from(card, { y: 60, opacity: 0, duration: 0.55 + i * 0.08, ease: "power4.out",
+            scrollTrigger: { trigger: card, start: "top 92%", once: true } });
+        });
+        $$(".product").forEach((card, i) => {
+          gsap.from(card, { y: 70, opacity: 0, duration: 1.1, delay: i * 0.09, ease: "expo.out",
+            scrollTrigger: { trigger: card, start: "top 92%", once: true } });
+        });
+
+        $$(".gallery-item").forEach((item, i) => {
+          gsap.from(item, { y: 40 + (i % 3) * 18, opacity: 0, duration: 0.85, delay: (i % 2) * 0.06, ease: "power3.out",
+            scrollTrigger: { trigger: item, start: "top 94%", once: true } });
+        });
+      }
+
+      function initMagnetic(){
+        if(!finePointer || reduced || !window.gsap) return;
+        $$(".magnetic").forEach(button => {
+          const onMove = event => {
+            const rect = button.getBoundingClientRect();
+            const dx = event.clientX - (rect.left + rect.width/2);
+            const dy = event.clientY - (rect.top + rect.height/2);
+            const distance = Math.hypot(dx, dy);
+            if(distance < 90) gsap.to(button, { "--bx": `${dx*.28}px`, "--by": `${dy*.28}px`, duration: 0.3, ease: "power3.out", overwrite: true });
+            else reset();
+          };
+          const reset = () => gsap.to(button, { "--bx": "0px", "--by": "0px", duration: 0.85, ease: "elastic.out(1, .3)", overwrite: true });
+          addEventListener("mousemove", onMove, { passive: true });
+          button.addEventListener("mouseleave", reset);
+        });
+      }
+
+      window.onSpotifyIframeApiReady = (IFrameAPI) => {
+        const controllers = [];
+        const embeds = $$("[data-spotify-uri]");
+        embeds.forEach(el => {
+          const options = { uri: el.dataset.spotifyUri, width: "100%", height: 152 };
+          IFrameAPI.createController(el, options, (controller) => {
+            controllers.push(controller);
+            controller.addListener("playback_update", (e) => {
+              if(!e.data) return;
+              if(!e.data.isPaused && !e.data.isBuffering){
+                controllers.forEach(other => { if(other !== controller) other.pause(); });
+              }
+            });
+          });
+        });
+      };
+
+      function openCart(open){
+        $("#cart").classList.toggle("open", open);
+        $("#cartOverlay").classList.toggle("open", open);
+        $("#cart").setAttribute("aria-hidden", String(!open));
+        document.body.classList.toggle("cart-open", open);
+        open ? lenis?.stop() : lenis?.start();
+      }
+      function closeMenu(){
+        $("#mobileMenu").classList.remove("open");
+        $("#mobileMenu").setAttribute("aria-hidden", "true");
+        $("#menuToggle").setAttribute("aria-expanded", "false");
+        document.body.classList.remove("menu-open");
+        lenis?.start();
+      }
+      function toggleMenu(){
+        const open = !$("#mobileMenu").classList.contains("open");
+        $("#mobileMenu").classList.toggle("open", open);
+        $("#mobileMenu").setAttribute("aria-hidden", String(!open));
+        $("#menuToggle").setAttribute("aria-expanded", String(open));
+        document.body.classList.toggle("menu-open", open);
+        open ? lenis?.stop() : lenis?.start();
+      }
+
+      function initUI(){
+        $("#menuToggle").addEventListener("click", toggleMenu);
+        $("#cartOpen").addEventListener("click", () => openCart(true));
+        $("#cartClose").addEventListener("click", () => openCart(false));
+        $("#cartOverlay").addEventListener("click", () => openCart(false));
+        const videoRail = $("#videoRail");
+        const moveVideo = direction => {
+          const card = $(".video-card", videoRail);
+          if(card) videoRail.scrollBy({ left: direction * (card.getBoundingClientRect().width + 16), behavior: reduced ? "auto" : "smooth" });
+        };
+        $("#videoPrev").addEventListener("click", () => moveVideo(-1));
+        $("#videoNext").addEventListener("click", () => moveVideo(1));
+        addEventListener("keydown", event => { if(event.key === "Escape"){ closeMenu(); openCart(false); } });
+        $("#contactForm").addEventListener("submit", event => {
+          event.preventDefault();
+          const data = new FormData(event.currentTarget);
+          const subject = encodeURIComponent(data.get("Asunto"));
+          const body = encodeURIComponent(`De: ${data.get("Nombre")} (${data.get("Correo")})\n\n${data.get("Mensaje")}`);
+          location.href = `mailto:booking@isdead.xyz?subject=${subject}&body=${body}`;
+        });
+      }
+
+      function runLoader(){
+        const loader = $("#loader"), path = $(".loader-glitch path"), percent = $("#bootPercent"), text = $("#bootText");
+        const phrase = "SISTEMA INICIADO"; let chars = 0;
+        if(reduced || !window.gsap){ text.textContent = phrase; percent.textContent = "100"; loader.remove(); return Promise.resolve(); }
+        return new Promise(resolve => {
+          const typer = setInterval(() => { text.textContent = phrase.slice(0, ++chars); if(chars >= phrase.length) clearInterval(typer); }, 70);
+          const state = { value: 0 };
+          const tl = gsap.timeline({ onComplete: () => { loader.remove(); resolve(); } });
+          tl.to(path, { strokeDashoffset: 0, duration: 1.55, ease: "power2.inOut" }, 0)
+            .to(state, { value: 100, duration: 1.55, ease: "power1.inOut", onUpdate: () => percent.textContent = Math.round(state.value) }, 0)
+            .to(loader, { clipPath: "circle(0% at 50% 50%)", duration: 1.05, ease: "power4.inOut" }, 1.7);
+        });
+      }
+
+      document.addEventListener("visibilitychange", () => {
+        pageVisible = !document.hidden;
+        if(pageVisible){ smoke?.start(); if(!reduced) gsap.globalTimeline.resume(); }
+        else { smoke?.stop(); gsap?.globalTimeline.pause(); }
+      });
+
+      document.addEventListener("DOMContentLoaded", async () => {
+        renderMerch();
+        initUI();
+        new Cart();
+        smoke = new SmokeScene($("#webgl"));
+        initScroll();
+        initMagnetic();
+        ScrollTrigger?.refresh();
+        await runLoader();
+      });
+    })();
+  </script>
+</body>
+</html>
