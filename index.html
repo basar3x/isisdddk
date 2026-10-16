@@ -9,7 +9,15 @@
   <meta property="og:description" content="Is Dead — Trap, indie y hip-hop experimental. Un universo visual digital.">
   <meta property="og:image" content="https://i.pinimg.com/1200x/d0/a0/43/d0a043a16ad41ffaa91694a749b60b65.jpg">
   <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="IS DEAD | World">
+  <meta name="twitter:description" content="Trap, indie y hip-hop experimental.">
+  <meta name="twitter:image" content="https://i.pinimg.com/1200x/d0/a0/43/d0a043a16ad41ffaa91694a749b60b65.jpg">
   <title>IS DEAD | World</title>
+
+  <link rel="icon" type="image/jpeg" href="https://i.pinimg.com/1200x/d0/a0/43/d0a043a16ad41ffaa91694a749b60b65.jpg">
+  <link rel="apple-touch-icon" href="https://i.pinimg.com/1200x/d0/a0/43/d0a043a16ad41ffaa91694a749b60b65.jpg">
+  <link rel="canonical" href="https://isdead.world/">
 
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
@@ -50,6 +58,8 @@
     img{display:block;max-width:100%}figure{margin:0}
     :focus-visible{outline:2px solid var(--neon-cyan);outline-offset:5px}
     .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    .skip-link{position:fixed;top:-100px;left:1rem;z-index:10000;padding:.7rem 1.15rem;border-radius:0 0 10px 10px;background:var(--neon-pink);color:#fff;font-weight:800;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;transition:top .22s ease}
+    .skip-link:focus{top:0;outline:2px solid var(--neon-cyan);outline-offset:2px}
     .shell{width:min(100% - (var(--pad) * 2),1440px);margin-inline:auto}
     .section{position:relative;padding-block:var(--section);z-index:2}
     .eyeline{max-width:70ch;color:var(--muted);font-size:clamp(.92rem,1.25vw,1.08rem)}
@@ -76,7 +86,8 @@
     .boot-copy{display:flex;justify-content:space-between;margin-top:1.2rem;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:#8a8580}.boot-status{color:var(--neon-cyan)}
 
     /* ---------- NAV ---------- */
-    .nav{position:fixed;top:0;left:0;right:0;z-index:80;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:2rem;padding:1rem var(--pad);background:linear-gradient(180deg,rgba(10,10,10,.96),rgba(10,10,10,.62));border-bottom:1px solid rgba(255,255,255,.06);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+    .nav{position:fixed;top:0;left:0;right:0;z-index:80;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:2rem;padding:1rem var(--pad);background:linear-gradient(180deg,rgba(10,10,10,.96),rgba(10,10,10,.62));border-bottom:1px solid rgba(255,255,255,.06);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);transition:transform .4s var(--ease),opacity .35s ease}
+    .nav.hidden{transform:translateY(-100%);opacity:0;pointer-events:none}
     .brand{font-weight:800;letter-spacing:-.04em;font-size:1.15rem;color:#fff;font-family:var(--font-display)}
     .nav-links{display:flex;justify-content:center;gap:clamp(1rem,2.3vw,2.5rem);font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase}.nav-links a{color:#a8a29e;transition:color .25s ease}.nav-links a:hover{color:#fff}
     .nav-actions{display:flex;align-items:center;gap:.6rem}.menu-toggle{display:none}
@@ -89,31 +100,36 @@
     .hero-media:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 48%,rgba(10,10,10,.05),rgba(10,10,10,.82) 72%),linear-gradient(0deg,#0a0a0a 0%,transparent 42%,rgba(10,10,10,.35) 100%);z-index:1}
     .hero-media img{width:100%;height:100%;object-fit:cover;object-position:56% 25%;filter:grayscale(.3) contrast(1.2) brightness(.5);transform:scale(1.035);will-change:transform;position:relative;z-index:0}
     .hero-grid{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.25rem;width:min(100%,1380px);margin:auto;position:relative;z-index:2}
-    .hero-title{position:relative;margin:0;font-family:var(--font-hero);font-weight:900;font-size:clamp(4.2rem,16vw,15rem);line-height:.74;letter-spacing:-.085em;text-transform:uppercase;white-space:nowrap;color:#fff;text-shadow:0 0 1px rgba(255,255,255,.4);max-width:100%}
-    .hero-title::before{content:"";position:absolute;inset:-40% -12%;background:radial-gradient(ellipse at center,rgba(255,77,141,.38),transparent 62%);filter:blur(80px);z-index:-1;pointer-events:none;animation:heroGlow 5.5s ease-in-out infinite alternate}
-    @keyframes heroGlow{from{opacity:.5;transform:scale(1)}to{opacity:.95;transform:scale(1.09)}}
+    .hero-title{position:relative;margin:0;font-family:var(--font-hero);font-weight:900;font-size:clamp(4.2rem,16vw,15rem);line-height:.74;letter-spacing:-.085em;text-transform:uppercase;white-space:nowrap;color:#fff;max-width:100%}
     .hero-title .line{display:inline-block;position:relative}
+    /* Efecto "IS" — sólido y con brillo interior sutil */
     .hero-title .line:first-child{
-      background:linear-gradient(180deg,#ffffff 0%,#8a8a8a 100%);
+      background:linear-gradient(180deg,#ffffff 0%,#a8a8a8 100%);
       -webkit-background-clip:text;background-clip:text;color:transparent;
-      filter:drop-shadow(0 0 20px rgba(255,255,255,.15));
+      filter:drop-shadow(0 0 15px rgba(255,255,255,.12));
     }
+    /* Efecto "DEAD" — neón multicapa realista */
     .hero-title .dead{
       margin-left:.02em;
       background:linear-gradient(135deg,var(--neon-pink) 0%,var(--neon-cyan) 100%);
       -webkit-background-clip:text;background-clip:text;color:transparent;
-      filter:drop-shadow(0 0 38px rgba(255,77,141,.55)) drop-shadow(0 0 70px rgba(0,229,255,.35));
-      position:relative;
+      filter:drop-shadow(0 0 12px rgba(255,77,141,.5))
+             drop-shadow(0 0 25px rgba(255,77,141,.3))
+             drop-shadow(0 0 45px rgba(0,229,255,.2));
     }
+    /* Parpadeo sutil sobre capa duplicada */
     .hero-title .dead::after{
       content:"DEAD";
       position:absolute;inset:0;
       background:linear-gradient(135deg,var(--neon-cyan) 0%,var(--neon-pink) 100%);
       -webkit-background-clip:text;background-clip:text;color:transparent;
       mix-blend-mode:screen;opacity:0;pointer-events:none;
-      animation:shimmer 6s ease-in-out infinite;
+      animation:flicker 7s infinite;
     }
-    @keyframes shimmer{0%,90%,100%{opacity:0;transform:translateX(0)}45%{opacity:.7;transform:translateX(-2px)}55%{opacity:.7;transform:translateX(2px)}}
+    @keyframes flicker{
+      0%, 18%, 22%, 25%, 53%, 57%, 100% { opacity: 0; }
+      20%, 24%, 55% { opacity: 0.6; }
+    }
     .hero-accent{width:clamp(60px,10vw,120px);height:2px;background:linear-gradient(90deg,transparent,var(--neon-pink),var(--neon-cyan),transparent);border-radius:2px;margin:.25rem 0}
     .hero-slogan{margin:0;color:#fff;font-family:var(--font-hero);font-size:clamp(1rem,2.4vw,2rem);font-weight:900;letter-spacing:.35em;text-transform:uppercase;padding-left:.35em}
     .hero-actions{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-top:1.5rem;width:min(100%,520px)}
@@ -129,7 +145,7 @@
     .about-copy{padding-top:clamp(0rem,4vw,4rem)}.about-copy p{max-width:64ch;color:#b0aaa4;font-size:clamp(1.05rem,1.6vw,1.3rem)}.about-copy strong{color:#fff;font-weight:780}
     .artist-slogan{margin:clamp(1.5rem,3vw,2.5rem) 0;font-family:var(--font-hero);font-size:clamp(3rem,7vw,7.3rem)!important;font-weight:900;line-height:.8;letter-spacing:-.06em;text-transform:uppercase;color:var(--neon-cyan)!important}
 
-    /* ---------- CATÁLOGO (GLASS) ---------- */
+    /* ---------- CATÁLOGO ---------- */
     .catalog{background:linear-gradient(180deg,rgba(17,17,18,.82),rgba(10,10,10,.98));position:relative;overflow:hidden}
     .catalog::before{content:"";position:absolute;top:22%;left:8%;width:70%;height:70%;background:radial-gradient(circle,rgba(255,77,141,.25),transparent 68%);filter:blur(90px);z-index:0;pointer-events:none}
     .catalog .shell{position:relative;z-index:1}
@@ -138,6 +154,10 @@
     .release-card:hover{transform:translate3d(0,-5px,0);border-color:rgba(255,77,141,.62);background:rgba(255,255,255,.04)}
     .release-card p{margin:.1rem 0 .75rem;color:var(--neon-pink);font-size:.68rem;font-weight:780;letter-spacing:.13em;text-transform:uppercase}
     .spotify-embed{width:100%;height:152px;border-radius:var(--radius-sm);overflow:hidden;background:rgba(0,0,0,.25)}
+    .catalog-dots{display:none;justify-content:center;gap:.4rem;margin-top:1rem}
+    .catalog-dots.visible{display:flex}
+    .slider-dot{width:8px;height:8px;border-radius:999px;background:rgba(255,255,255,.28);border:none;padding:0;transition:all .25s ease;cursor:pointer}
+    .slider-dot.active{width:22px;background:var(--neon-pink);box-shadow:0 0 8px var(--neon-pink)}
 
     /* ---------- STREAMING ROW ---------- */
     .streaming-row{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:.5rem;margin-top:clamp(1.5rem,4vw,2.5rem)}
@@ -225,11 +245,17 @@
     .cart-empty{margin:auto;text-align:center;color:var(--muted)}.cart-foot{padding-top:1rem;border-top:1px solid var(--line)}
     .cart-foot input{width:100%;margin-bottom:.7rem;padding:.8rem;border:1px solid var(--line);border-radius:var(--radius-sm);background:#080808;color:#fff;font-size:16px}
     .cart-foot .button{width:100%}
+    .cart-qty-btn{display:grid;place-items:center;background:transparent;border:1px solid var(--line);border-radius:6px;width:30px;height:30px;color:var(--neon-pink);font-weight:700;transition:background .2s,color .2s}
+    .cart-qty-btn:hover{background:var(--neon-pink);color:#0a0a0a;border-color:var(--neon-pink)}
 
     /* ---------- MENÚ MÓVIL ---------- */
     .mobile-menu{position:fixed;inset:0;z-index:75;display:none;place-items:center;padding:5.5rem 1.25rem 2rem;background:#0a0a0a;opacity:0;visibility:hidden;overflow-y:auto;transition:opacity .35s ease,visibility .35s}.mobile-menu.open{opacity:1;visibility:visible}
     .mobile-menu nav{display:grid;gap:.7rem;text-align:center;width:100%}
     .mobile-menu a{font-size:clamp(1.8rem,9vw,3.6rem);font-weight:820;letter-spacing:-.04em;text-transform:uppercase}
+
+    /* ---------- TOAST ---------- */
+    .toast{position:fixed;bottom:1.25rem;left:50%;transform:translate(-50%,20px);z-index:220;padding:.7rem 1.3rem;border-radius:999px;background:#161617;border:1px solid var(--neon-pink);color:#fff;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;box-shadow:0 10px 30px rgba(0,0,0,.8),0 0 20px rgba(255,77,141,.25);opacity:0;visibility:hidden;transition:all .3s var(--ease);pointer-events:none;white-space:nowrap;max-width:calc(100vw - 2rem)}
+    .toast.show{opacity:1;visibility:visible;transform:translate(-50%,0)}
 
     .word{display:inline-block;overflow:hidden;vertical-align:bottom}.word-inner{display:inline-block}
 
@@ -240,7 +266,21 @@
       .hero-title{font-size:clamp(4rem,19vw,9rem)}.hero-rail{display:none}.section-head{align-items:start}
       .about-copy{padding-top:0}.about-portrait{width:min(100%,540px)}
       .shows-layout .section-title{position:static}
-      .release-grid{grid-template-columns:1fr 1fr}
+      /* Carrusel de discografía en móvil */
+      .release-grid{
+        display:flex;
+        overflow-x:auto;
+        scroll-snap-type:x mandatory;
+        scrollbar-width:none;
+        -ms-overflow-style:none;
+        gap:1rem;
+        padding-bottom:1rem;
+        margin-inline:calc(-1 * var(--pad));
+        padding-inline:var(--pad);
+      }
+      .release-grid::-webkit-scrollbar{display:none}
+      .release-card{flex:0 0 75vw;scroll-snap-align:center}
+      .catalog-dots{display:flex}
       .mobile-menu{display:grid}
       .footer-row{align-items:start;flex-direction:column}
     }
@@ -254,13 +294,12 @@
       .hero-actions{width:100%;gap:.5rem;margin-top:1.2rem}
       .hero-actions .button{font-size:.66rem;padding:.7rem .6rem;letter-spacing:.08em;min-height:46px}
       .section-title{font-size:clamp(2.6rem,13vw,4.4rem)}
-      .release-grid{grid-template-columns:1fr}
       .merch-grid{grid-template-columns:1fr;gap:1rem;max-width:440px}
       .product{min-height:auto;padding:.75rem;border-radius:14px}
       .product h3{font-size:1rem;line-height:1.2}
       .product-price{font-size:.88rem;margin:.35rem 0 .75rem}
       .sizes{gap:.3rem;margin-bottom:.65rem}
-      .size{min-width:34px;height:34px;font-size:.75rem;border-radius:8px}
+      .size{min-width:38px;height:38px;font-size:.75rem;border-radius:8px}
       .product .button{font-size:.7rem;min-height:46px;padding:.65rem .5rem;letter-spacing:.07em}
       .product-dots{bottom:.9rem;padding:.35rem .6rem}
       .product-dots button{width:7px;height:7px}
@@ -271,7 +310,7 @@
       .mobile-menu a{font-size:clamp(1.65rem,8.5vw,2.8rem)}
       .contact-links a{font-size:.9rem}
     }
-    /* Móviles muy estrechos (iPhone SE, etc.) */
+    /* Móviles muy estrechos */
     @media(max-width:380px){
       .hero-title{font-size:clamp(3.2rem,18vw,5.5rem);letter-spacing:-.05em}
       .hero-slogan{letter-spacing:.22em}
@@ -286,11 +325,14 @@
       .grain,#webgl{display:none!important}
       .button{will-change:auto}
       .about-portrait img{will-change:auto}
+      .hero-title .dead::after{animation:none!important;opacity:0!important}
       .word,.word-inner{display:inline}.word{overflow:visible}
     }
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#top">Saltar al contenido</a>
+
   <div id="loader" aria-live="polite" aria-label="Iniciando sistema">
     <div class="loader-inner">
       <svg class="loader-glitch" viewBox="0 0 600 90" aria-hidden="true"><path pathLength="1" d="M0 46H60L80 46L100 10L130 79L160 46H220L240 46L260 22L290 68L320 46H380L400 46L420 7L450 82L480 46H600"/></svg>
@@ -349,7 +391,7 @@
           <p><strong>Is Dead</strong> es un proyecto musical y sello independiente que fusiona el <strong>trap</strong>, el <strong>indie</strong> y el <strong>hip-hop experimental</strong> en un universo sonoro propio. Su música habita un espacio entre lo melancólico y lo juguetón, con producciones atmosféricas que priorizan la textura sobre la claridad.</p>
           <p>Con un catálogo de más de 60 lanzamientos en plataformas como Qobuz y Spotify, Is Dead desafía las categorías tradicionales. Sus títulos —cargados de emojis, símbolos y caracteres especiales— reflejan una estética digital nativa de internet, similar a la de fakemink o la escena cloud rap. Es un artista que no teme al error ni a la experimentación.</p>
           <div class="hero-actions" style="grid-template-columns:1fr">
-            <a class="button magnetic" href="https://www.qobuz.com/us-en/interpreter/is-dead/10516617" target="_blank" rel="noopener">Discografía en Qobuz</a>
+            <a class="button magnetic" href="https://open.spotify.com/artist/0EKvKtaSHhGT2Sppi8qZLS" target="_blank" rel="noopener">Discografía en Spotify</a>
           </div>
           <div class="profile-socials" aria-label="Redes de Is Dead" style="margin-top:1.2rem">
             <a class="social-icon" href="https://open.spotify.com/artist/0EKvKtaSHhGT2Sppi8qZLS" target="_blank" rel="noopener" aria-label="Spotify"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm4.6 14.4a.7.7 0 0 1-.96.23c-2.63-1.6-5.94-1.97-9.84-1.08a.7.7 0 1 1-.31-1.36c4.26-.97 7.94-.55 10.88 1.24.33.2.43.64.23.97Zm1.37-3.03a.88.88 0 0 1-1.2.3c-3.02-1.86-7.63-2.39-11.2-1.31a.88.88 0 1 1-.51-1.68c4.09-1.24 9.17-.64 12.62 1.49.42.25.55.79.29 1.2Z"/></svg></a>
@@ -364,7 +406,7 @@
     <section class="section catalog rule" id="music">
       <div class="shell">
         <div class="section-head"><h2 class="section-title split-title">Discografía</h2><p class="eyeline">Lanzamientos oficiales. Una selección de su universo sonoro.</p></div>
-        <div class="release-grid" aria-label="Lanzamientos principales">
+        <div class="release-grid" id="releaseGrid" aria-label="Lanzamientos principales">
           <article class="release-card"><p>VMOSAFUMAR</p><div class="spotify-embed" data-spotify-uri="spotify:track:4mI1Liom50jAKPu1vx1NmH"></div></article>
           <article class="release-card"><p>ɐquı ɐfuera</p><div class="spotify-embed" data-spotify-uri="spotify:album:3Ebkb29h9MdWbgoclNGajt"></div></article>
           <article class="release-card"><p>Yho</p><div class="spotify-embed" data-spotify-uri="spotify:track:0gmhXWpcbKjfT0iFh1NeOR"></div></article>
@@ -372,11 +414,13 @@
           <article class="release-card"><p>Zuper delicioso !</p><div class="spotify-embed" data-spotify-uri="spotify:track:3eVwqzkZYzpabNtVJIPZzj"></div></article>
           <article class="release-card"><p>Tewo a comer !</p><div class="spotify-embed" data-spotify-uri="spotify:track:6Ia5Qc4QsmdHpG5tEaFASE"></div></article>
         </div>
+        <div class="catalog-dots" id="catalogDots" aria-label="Indicador de pistas"></div>
 
         <div class="streaming-row" aria-label="Abrir Is Dead en plataformas de streaming">
           <a class="stream-btn" href="https://open.spotify.com/artist/0EKvKtaSHhGT2Sppi8qZLS" target="_blank" rel="noopener" aria-label="Abrir en Spotify"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm4.6 14.4a.7.7 0 0 1-.96.23c-2.63-1.6-5.94-1.97-9.84-1.08a.7.7 0 1 1-.31-1.36c4.26-.97 7.94-.55 10.88 1.24.33.2.43.64.23.97Zm1.37-3.03a.88.88 0 0 1-1.2.3c-3.02-1.86-7.63-2.39-11.2-1.31a.88.88 0 1 1-.51-1.68c4.09-1.24 9.17-.64 12.62 1.49.42.25.55.79.29 1.2Z"/></svg><span>Spotify</span></a>
-          <a class="stream-btn" href="https://www.qobuz.com/us-en/interpreter/is-dead/10516617" target="_blank" rel="noopener" aria-label="Abrir en Qobuz"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 14h3v2H3v-2Zm0-4h3v2H3v-2Zm0-4h3v2H3V6Zm5 8h3v2H8v-2Zm0-4h3v2H8v-2Zm0-4h3v2H8V6Zm5 8h3v2h-3v-2Zm0-4h3v2h-3v-2Zm0-4h3v2h-3V6Zm5 8h3v2h-3v-2Zm0-4h3v2h-3v-2Z"/></svg><span>Qobuz</span></a>
-          <a class="stream-btn" href="https://www.youtube.com/channel/UCLKPDnIvAVkcPdp_B0NTHVA" target="_blank" rel="noopener" aria-label="Abrir en YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2C.5 9.1.5 12 .5 12s0 2.9.5 4.8a3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1c.5-1.9.5-4.8.5-4.8s0-2.9-.5-4.8ZM9.7 15.2V8.8l6 3.2-6 3.2Z"/></svg><span>YouTube</span></a>
+          <a class="stream-btn" href="https://music.apple.com/us/artist/is-dead/1740388416" target="_blank" rel="noopener" aria-label="Abrir en Apple Music"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm2.5 4v9.2a2.4 2.4 0 1 1-1.8-2.3V8l-4.2.92v7.78a2.4 2.4 0 1 1-1.8-2.3V7.4l7.8-1.72V6Z"/></svg><span>Apple Music</span></a>
+          <a class="stream-btn" href="https://music.youtube.com/channel/UC4OaC0rOAc0J0Q0fF0tHjJw" target="_blank" rel="noopener" aria-label="Abrir en YouTube Music"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 4a6 6 0 1 1 0 12 6 6 0 0 1 0-12Zm-1.5 3.5v5l4.5-2.5-4.5-2.5Z"/></svg><span>YouTube Music</span></a>
+          <a class="stream-btn" href="https://www.deezer.com/artist/196021627" target="_blank" rel="noopener" aria-label="Abrir en Deezer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 14h3v2H3v-2Zm0-4h3v2H3v-2Zm0-4h3v2H3V6Zm5 8h3v2H8v-2Zm0-4h3v2H8v-2Zm0-4h3v2H8V6Zm5 8h3v2h-3v-2Zm0-4h3v2h-3v-2Zm0-4h3v2h-3V6Zm5 8h3v2h-3v-2Zm0-4h3v2h-3v-2Z"/></svg><span>Deezer</span></a>
         </div>
       </div>
     </section>
@@ -428,7 +472,6 @@
         <a href="https://www.instagram.com/isisdddk/?hl=es-la" target="_blank" rel="noopener">Instagram</a>
         <a href="https://www.tiktok.com/@deadisisdead" target="_blank" rel="noopener">TikTok</a>
         <a href="https://open.spotify.com/artist/0EKvKtaSHhGT2Sppi8qZLS" target="_blank" rel="noopener">Spotify</a>
-        <a href="https://www.qobuz.com/us-en/interpreter/is-dead/10516617" target="_blank" rel="noopener">Qobuz</a>
         <a href="https://www.youtube.com/channel/UCLKPDnIvAVkcPdp_B0NTHVA" target="_blank" rel="noopener">YouTube</a>
       </div>
     </div>
@@ -455,11 +498,12 @@
     </div>
   </aside>
 
+  <div class="toast" id="toast" role="status" aria-live="polite">Añadido al carrito</div>
+
   <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-  <script src="https://open.spotify.com/embed/iframe-api/v1" async></script>
   <script>
     (() => {
       "use strict";
@@ -469,6 +513,7 @@
       const finePointer = matchMedia("(hover: hover) and (pointer: fine)").matches;
 
       const WHATSAPP = "593967987244";
+      let toastTimer = 0;
 
       const MERCH = [
         {
@@ -505,6 +550,15 @@
       let smoke = null;
       let pageVisible = !document.hidden;
 
+      function showToast(msg){
+        const toast = $("#toast");
+        if(!toast) return;
+        toast.textContent = msg;
+        toast.classList.add("show");
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(() => toast.classList.remove("show"), 2200);
+      }
+
       class Cart {
         constructor(){
           this.items = [];
@@ -528,7 +582,9 @@
           const key = `${product.id}|${chosen}`;
           const existing = this.items.find(item => item.key === key);
           existing ? existing.qty++ : this.items.push({key, name:product.name, price:product.price, size:chosen, qty:1});
-          this.render(); openCart(true);
+          this.render();
+          showToast(`Añadido: ${product.name}`);
+          openCart(true);
         }
         change(key, delta){
           const item = this.items.find(entry => entry.key === key); if(!item) return;
@@ -542,7 +598,7 @@
           const total = this.items.reduce((sum,item) => sum + item.price * item.qty, 0);
           $("#cartCount").textContent = count;
           $("#cartItems").innerHTML = this.items.length
-            ? this.items.map(item => `<li style="display:grid;grid-template-columns:1fr auto;gap:1rem;border-bottom:1px solid var(--line);padding-bottom:1rem"><div><strong>${item.name}</strong><small style="display:block;color:var(--muted)">${item.size?`Talla ${item.size} · `:""}$${item.price.toFixed(2)}</small></div><div><button data-key="${item.key}" data-delta="-1" style="background:transparent;border:1px solid var(--line);border-radius:6px;width:28px;height:28px;cursor:pointer">−</button> <span style="display:inline-block;min-width:1.5rem;text-align:center">${item.qty}</span> <button data-key="${item.key}" data-delta="1" style="background:transparent;border:1px solid var(--line);border-radius:6px;width:28px;height:28px;cursor:pointer">+</button></div></li>`).join("")
+            ? this.items.map(item => `<li style="display:grid;grid-template-columns:1fr auto;gap:1rem;border-bottom:1px solid var(--line);padding-bottom:1rem"><div><strong>${item.name}</strong><small style="display:block;color:var(--muted)">${item.size?`Talla ${item.size} · `:""}$${item.price.toFixed(2)}</small></div><div style="display:flex;align-items:center;gap:.35rem"><button class="cart-qty-btn" data-key="${item.key}" data-delta="-1" aria-label="Disminuir">−</button><span style="display:inline-block;min-width:1.5rem;text-align:center">${item.qty}</span><button class="cart-qty-btn" data-key="${item.key}" data-delta="1" aria-label="Aumentar">+</button></div></li>`).join("")
             : '<li class="cart-empty"><p>Tu carrito está vacío.</p></li>';
           $("#cartTotal").innerHTML = `<span>Total</span><span>$${total.toFixed(2)}</span>`;
           $("#checkout").disabled = !count;
@@ -579,7 +635,6 @@
         initMerchCarousels();
       }
 
-      /* Carrusel de fotos para cada camiseta */
       function initMerchCarousels(){
         $$(".product-visual").forEach(visual => {
           const track = $(".product-slides", visual);
@@ -588,10 +643,7 @@
           const next = $(".product-arrow.next", visual);
           if(!track || !dots.length) return;
 
-          const setActive = (index) => {
-            dots.forEach((d,i) => d.classList.toggle("active", i === index));
-          };
-
+          const setActive = (index) => { dots.forEach((d,i) => d.classList.toggle("active", i === index)); };
           const goTo = (index) => {
             const clamped = Math.max(0, Math.min(dots.length - 1, index));
             track.scrollTo({ left: clamped * track.clientWidth, behavior: reduced ? "auto" : "smooth" });
@@ -604,41 +656,57 @@
             ticking = true;
             requestAnimationFrame(() => {
               const w = track.clientWidth;
-              if(w > 0){
-                const index = Math.round(track.scrollLeft / w);
-                setActive(index);
-              }
+              if(w > 0) setActive(Math.round(track.scrollLeft / w));
               ticking = false;
             });
           }, { passive: true });
 
-          dots.forEach((dot,i) => {
-            dot.addEventListener("click", (e) => { e.preventDefault(); e.stopPropagation(); goTo(i); });
-          });
-
-          prev?.addEventListener("click", (e) => {
-            e.preventDefault(); e.stopPropagation();
-            const current = Math.round(track.scrollLeft / track.clientWidth);
-            goTo(current - 1);
-          });
-          next?.addEventListener("click", (e) => {
-            e.preventDefault(); e.stopPropagation();
-            const current = Math.round(track.scrollLeft / track.clientWidth);
-            goTo(current + 1);
-          });
+          dots.forEach((dot,i) => dot.addEventListener("click", (e) => { e.preventDefault(); e.stopPropagation(); goTo(i); }));
+          prev?.addEventListener("click", (e) => { e.preventDefault(); e.stopPropagation(); goTo(Math.round(track.scrollLeft / track.clientWidth) - 1); });
+          next?.addEventListener("click", (e) => { e.preventDefault(); e.stopPropagation(); goTo(Math.round(track.scrollLeft / track.clientWidth) + 1); });
 
           let resizeTimer;
           addEventListener("resize", () => {
             clearTimeout(resizeTimer);
             resizeTimer = setTimeout(() => {
               const w = track.clientWidth;
-              if(w > 0){
-                const index = Math.round(track.scrollLeft / w);
-                track.scrollTo({ left: index * w, behavior: "auto" });
-              }
+              if(w > 0) track.scrollTo({ left: Math.round(track.scrollLeft / w) * w, behavior: "auto" });
             }, 150);
           }, { passive: true });
         });
+      }
+
+      /* Dots del catálogo en móvil */
+      function initCatalogDots(){
+        const grid = $("#releaseGrid");
+        const container = $("#catalogDots");
+        if(!grid || !container) return;
+        if(!matchMedia("(max-width: 900px)").matches){ container.innerHTML = ""; return; }
+
+        const cards = $$(".release-card", grid);
+        if(!cards.length) return;
+
+        container.innerHTML = cards.map((_, i) =>
+          `<button type="button" class="slider-dot${i === 0 ? " active" : ""}" data-index="${i}" aria-label="Ir a la pista ${i + 1}"></button>`
+        ).join("");
+
+        const dots = $$(".slider-dot", container);
+        dots.forEach(dot => dot.addEventListener("click", () => {
+          const card = cards[+dot.dataset.index];
+          if(card) card.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+        }));
+
+        let ticking = false;
+        grid.addEventListener("scroll", () => {
+          if(ticking) return;
+          ticking = true;
+          requestAnimationFrame(() => {
+            const cardW = cards[0].offsetWidth + parseFloat(getComputedStyle(grid).gap || 0);
+            const active = Math.round(grid.scrollLeft / cardW);
+            dots.forEach((d, i) => d.classList.toggle("active", i === active));
+            ticking = false;
+          });
+        }, { passive: true });
       }
 
       class SmokeScene {
@@ -674,6 +742,19 @@
           event.preventDefault(); closeMenu();
           lenis ? lenis.scrollTo(target,{offset:-72,duration:1.3}) : (id === "#top" ? scrollTo(0,0) : target.scrollIntoView());
         }));
+
+        /* Nav auto-hide */
+        const navEl = $(".nav");
+        let lastY = scrollY;
+        addEventListener("scroll", () => {
+          const y = scrollY;
+          if(navEl){
+            if(y > 200 && y > lastY + 4) navEl.classList.add("hidden");
+            else if(y < lastY - 4 || y < 200) navEl.classList.remove("hidden");
+          }
+          lastY = y;
+        }, { passive: true });
+
         if(reduced) return;
 
         $$(".split-title,.split-copy").forEach((element, i) => {
@@ -729,11 +810,10 @@
         });
       }
 
-      /* Spotify — un solo reproductor a la vez */
+      /* Spotify — Carga diferida + solo un reproductor activo */
       window.onSpotifyIframeApiReady = (IFrameAPI) => {
         const controllers = [];
         let activeController = null;
-
         const pauseAllExcept = (keep) => {
           controllers.forEach(c => {
             if (c === keep) return;
@@ -743,24 +823,41 @@
           });
         };
 
-        $$("[data-spotify-uri]").forEach(el => {
-          const options = { uri: el.dataset.spotifyUri, width: "100%", height: 152 };
-          IFrameAPI.createController(el, options, (controller) => {
-            controllers.push(controller);
-            controller.addListener("playback_update", (e) => {
-              if (!e.data) return;
-              const isPlaying = !e.data.isPaused && !e.data.isBuffering;
-              if (isPlaying) {
-                if (activeController !== controller) {
-                  activeController = controller;
-                  pauseAllExcept(controller);
+        const createControllers = () => {
+          $$("[data-spotify-uri]").forEach(el => {
+            if (el.dataset.controllerCreated) return;
+            el.dataset.controllerCreated = "true";
+            const options = { uri: el.dataset.spotifyUri, width: "100%", height: 152 };
+            IFrameAPI.createController(el, options, (controller) => {
+              controllers.push(controller);
+              controller.addListener("playback_update", (e) => {
+                if (!e.data) return;
+                const isPlaying = !e.data.isPaused && !e.data.isBuffering;
+                if (isPlaying) {
+                  if (activeController !== controller) {
+                    activeController = controller;
+                    pauseAllExcept(controller);
+                  }
+                } else if (e.data.isPaused && activeController === controller) {
+                  activeController = null;
                 }
-              } else if (e.data.isPaused && activeController === controller) {
-                activeController = null;
-              }
+              });
             });
           });
-        });
+        };
+
+        if ("IntersectionObserver" in window) {
+          const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) { createControllers(); observer.disconnect(); }
+            });
+          }, { rootMargin: "200px" });
+          const section = document.getElementById("music");
+          if (section) observer.observe(section);
+          else createControllers();
+        } else {
+          createControllers();
+        }
       };
 
       function openCart(open){
@@ -769,6 +866,7 @@
         $("#cart").setAttribute("aria-hidden", String(!open));
         document.body.classList.toggle("cart-open", open);
         open ? lenis?.stop() : lenis?.start();
+        if(open) setTimeout(() => $("#cartClose")?.focus(), 100);
       }
       function closeMenu(){
         $("#mobileMenu").classList.remove("open");
@@ -784,6 +882,7 @@
         $("#menuToggle").setAttribute("aria-expanded", String(open));
         document.body.classList.toggle("menu-open", open);
         open ? lenis?.stop() : lenis?.start();
+        if(open) setTimeout(() => $("#mobileMenu a")?.focus(), 100);
       }
 
       function initUI(){
@@ -791,7 +890,16 @@
         $("#cartOpen").addEventListener("click", () => openCart(true));
         $("#cartClose").addEventListener("click", () => openCart(false));
         $("#cartOverlay").addEventListener("click", () => openCart(false));
-        addEventListener("keydown", event => { if(event.key === "Escape"){ closeMenu(); openCart(false); } });
+        $("#mobileMenu").addEventListener("click", e => {
+          if(!e.target.closest("nav")) closeMenu();
+        });
+        addEventListener("keydown", event => {
+          if(event.key === "Escape"){ closeMenu(); openCart(false); }
+        });
+        addEventListener("resize", () => {
+          if(innerWidth > 900 && $("#mobileMenu").classList.contains("open")) closeMenu();
+          initCatalogDots();
+        }, { passive: true });
         $("#contactForm").addEventListener("submit", event => {
           event.preventDefault();
           const data = new FormData(event.currentTarget);
@@ -817,8 +925,8 @@
 
       document.addEventListener("visibilitychange", () => {
         pageVisible = !document.hidden;
-        if(pageVisible){ smoke?.start(); if(!reduced) gsap.globalTimeline.resume(); }
-        else { smoke?.stop(); gsap?.globalTimeline.pause(); }
+        if(pageVisible){ smoke?.start(); if(!reduced && window.gsap) gsap.globalTimeline.resume(); }
+        else { smoke?.stop(); if(window.gsap) gsap.globalTimeline.pause(); }
       });
 
       document.addEventListener("DOMContentLoaded", async () => {
@@ -828,8 +936,9 @@
         smoke = new SmokeScene($("#webgl"));
         initScroll();
         initMagnetic();
-        ScrollTrigger?.refresh();
+        initCatalogDots();
         await runLoader();
+        window.ScrollTrigger?.refresh();
       });
     })();
   </script>
